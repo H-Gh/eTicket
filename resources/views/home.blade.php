@@ -1,23 +1,21 @@
-@extends('layouts.app')
-
+@extends('layouts.frontend')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <div class="main-column">
+        @include("frontend.top-bar")
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+        <div class="main-content">
+            <a class="button primary" href="{{ route("ticket.new") }}">{{ __("ticket.New Ticket") }}</a>
+            <div class="box rounded">
+                <div class="title">{{ __("ticket.Tickets list") }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                <div class="content">
 
-                    You are logged in!
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

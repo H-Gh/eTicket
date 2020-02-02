@@ -1,0 +1,17 @@
+// Fonts
+@import url('../../public/font/iranSans/css/setup.css');
+@import url('../../public/font/fontAwsome/css/all.css');
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Variables
+@import 'common.variables';
+
+@import "body";
+@import "logo";
+@import "page";
+@import "box";
+@import "buttons";
+@import "forms";
+@import "inputs";

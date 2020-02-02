@@ -11,17 +11,11 @@
 |
 */
 
-Route::get(
-    '/',
-    function () {
-        return view('welcome');
-    }
-);
+Route::get('/', "HomeController@index")->name("home");
 
 Auth::routes(
     [
-        "register" => false
+        'verify' => true,
+        'confirm' => true
     ]
 );
-
-Route::get('/home', 'HomeController@index')->name('home');

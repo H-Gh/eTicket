@@ -1,0 +1,11 @@
+@import "top-bar";
+
+@media (max-width: 768px) {
+    .page .main-column {
+        width: calc(100% - 50px);
+    }
+}
+
+.page .main-column .main-content {
+    padding: 30px;
+}

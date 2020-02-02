@@ -1,0 +1,17 @@
+.box {
+    padding: 20px;
+    box-sizing: content-box;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
+}
+
+.box.rounded {
+    border-radius: 5px;
+}
+
+.auth-form-container .box {
+    padding: 40px;
+}

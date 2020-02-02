@@ -1,4 +1,82 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+/**
+*
+*	Name:			IRAN Sans-Serif Font
+*	Version:		5.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Dec 25, 2012
+*	Updated on:		Sep 01, 2017
+*	Website:		             http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت های ایران سن سریف یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRAN Sans-serif fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*
+**/
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 900;
+	src: url(/fonts/IRANSansWeb_Black.eot?c0f5dbbde9104d1dc813b68f50457e2c);
+	src: url(/fonts/IRANSansWeb_Black.eot?c0f5dbbde9104d1dc813b68f50457e2c?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb_Black.woff2?f477dd9634c960c5ce215aa435e32b4c) format('woff2'),  
+	url(/fonts/IRANSansWeb_Black.woff?dfb26a2f06ef268a82147b6ea001bcf9) format('woff'),  
+	url(/fonts/IRANSansWeb_Black.ttf?1becfaba43eef43af02099d64f0590a6) format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: bold;
+	src: url(/fonts/IRANSansWeb_Bold.eot?f2cb5d5906f5abc3c9f59e561b007ded);
+	src: url(/fonts/IRANSansWeb_Bold.eot?f2cb5d5906f5abc3c9f59e561b007ded?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb_Bold.woff2?43a0ecf3c7f2af819b192d1284f95ed9) format('woff2'),  
+	url(/fonts/IRANSansWeb_Bold.woff?e4ed975d7eb3ca8da589f27e55ef7f20) format('woff'),  
+	url(/fonts/IRANSansWeb_Bold.ttf?ebec177a9eccde9d5a4fb510ff1d1d8e) format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 500;
+	src: url(/fonts/IRANSansWeb_Medium.eot?3d468556450b88fba2ef7ac695a166d3);
+	src: url(/fonts/IRANSansWeb_Medium.eot?3d468556450b88fba2ef7ac695a166d3?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb_Medium.woff2?9c66b762719d40d1f18e678a1405459a) format('woff2'),  
+	url(/fonts/IRANSansWeb_Medium.woff?0c40b1a0ee0e7fedeb8a4ac6c58e270b) format('woff'),  
+	url(/fonts/IRANSansWeb_Medium.ttf?1da39fcf35d32c87ce9b3bdcfd2b90b2) format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 300;
+	src: url(/fonts/IRANSansWeb_Light.eot?28bc7e37dc1bba427c24941b19a11e4a);
+	src: url(/fonts/IRANSansWeb_Light.eot?28bc7e37dc1bba427c24941b19a11e4a?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb_Light.woff2?f7e4be98d20eb763b867143da5207b90) format('woff2'),  
+	url(/fonts/IRANSansWeb_Light.woff?63f8b4b6f55a927231311a9e83cb4fda) format('woff'),  
+	url(/fonts/IRANSansWeb_Light.ttf?e8ff3f7167961a35e98db2fd15bb37ca) format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: 200;
+	src: url(/fonts/IRANSansWeb_UltraLight.eot?3a70f4b4dcc84bcb84c3749ec235338d);
+	src: url(/fonts/IRANSansWeb_UltraLight.eot?3a70f4b4dcc84bcb84c3749ec235338d?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb_UltraLight.woff2?068169d2ab5f8a5dd1beae8b0149217d) format('woff2'),  
+	url(/fonts/IRANSansWeb_UltraLight.woff?bb7ec39fffa2e3ce96a5f52edd9e13c4) format('woff'),  
+	url(/fonts/IRANSansWeb_UltraLight.ttf?51b9c1ad55d006c89ec0639de7892278) format('truetype');
+}
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url(/fonts/IRANSansWeb.eot?d3931868176480f01fd4524cbd48b667);
+	src: url(/fonts/IRANSansWeb.eot?d3931868176480f01fd4524cbd48b667?#iefix) format('embedded-opentype'),  
+	url(/fonts/IRANSansWeb.woff2?0b5055ac357359f8c23320ea3dc0f78b) format('woff2'),  
+	url(/fonts/IRANSansWeb.woff?66b5cb30e2efe84dab915617acd39041) format('woff'),  
+	url(/fonts/IRANSansWeb.ttf?c26a9eb202b3ef6455281f0335cfffe9) format('truetype');
+}
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -34,7 +112,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "IRANSans", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -66,7 +144,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "IRANSans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -6714,7 +6792,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "IRANSans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -6839,7 +6917,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "IRANSans", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -11354,5 +11432,9 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+.navbar {
+  width: 250px;
 }
 

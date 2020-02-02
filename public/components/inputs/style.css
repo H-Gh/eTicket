@@ -1,0 +1,69 @@
+/* Customize the label (the container) */
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Hide the browser's default checkbox */
+input[type='checkbox'] {
+    display: none;
+}
+
+.checkbox-container label {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.checkbox-container label .checkbox-text {
+    line-height: 19px;
+}
+
+.checkbox-container .check-mark {
+    height: 18px;
+    width: 18px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.checkbox-container .check-mark,
+.checkbox-container.colorful .check-mark {
+    background-color: #13acfa;
+    margin: 0 3px;
+}
+
+.checkbox-container.stroke .check-mark {
+    background-color: #ffffff;
+    border: 1px solid #cecece;
+}
+
+.checkbox-container .check-mark:before {
+    content: '';
+    font-family: "Font Awesome 5 Free", serif;
+    width: 16px;
+    height: 16px;
+    display: block;
+    text-align: center;
+}
+
+.checkbox-container .check-mark:before,
+.checkbox-container.colorful .check-mark:before {
+    color: #ffffff;
+    padding: 1px 1px 1px 0;
+}
+
+.checkbox-container.stroke .check-mark:before {
+    color: #13acfa;
+    padding: 0 1px 0 1px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .check-mark:before {
+    content: "\f00c";
+    font-weight: 900;
+}

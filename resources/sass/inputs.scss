@@ -1,0 +1,69 @@
+label {
+    color: #434343;
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+}
+
+input,
+textarea,
+select {
+    border: 1px solid #e1e5e8;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 0 13px;
+}
+
+input.error,
+textarea.error,
+select.error {
+    border-color: #ff8788;
+}
+
+input,
+select {
+    height: 30px;
+}
+
+textarea {
+    padding: 13px;
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active,
+select:focus,
+select:active {
+    outline: none;
+}
+
+.auth-form-container input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-bottom: 1px solid #d5d5d5;
+    border-radius: 0;
+}
+
+.auth-form-container input::placeholder {
+    color: #b8b8b8;
+}
+
+.auth-form-container input:focus,
+.auth-form-container input:active {
+    border-bottom-color: #14acf8;
+    outline: none;
+}
+
+.auth-form-container input:focus::placeholder,
+.auth-form-container input:active::placeholder {
+    color: #656565;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
