@@ -22,8 +22,8 @@
 </main>
 
 <!-- Scripts -->
-<script src="{{ asset('js/frontend.app.js') }}" defer></script>
-{{--<script src="{{ asset('components/jquery/jquery-3.4.1.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/frontend.app.js') }}" defer></script>--}}
+<script src="{{ asset('components/jquery/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('components/inputs/plugin.js') }}"></script>
 <script src="{{ asset('components/inputs/setup.js') }}"></script>
 @yield("js")

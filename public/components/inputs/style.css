@@ -1,7 +1,6 @@
 /* Customize the label (the container) */
 .checkbox-container {
     position: relative;
-    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -18,10 +17,15 @@ input[type='checkbox'] {
 .checkbox-container label {
     display: flex;
     flex-direction: row-reverse;
+    cursor: pointer;
 }
 
 .checkbox-container label .checkbox-text {
     line-height: 19px;
+}
+
+.checkbox-container.disabled label .checkbox-text {
+    color: #cecece;
 }
 
 .checkbox-container .check-mark {
@@ -35,6 +39,11 @@ input[type='checkbox'] {
 .checkbox-container.colorful .check-mark {
     background-color: #13acfa;
     margin: 0 3px;
+}
+
+.checkbox-container.disabled .check-mark,
+.checkbox-container.colorful.disabled .check-mark {
+    background-color: #cecece;
 }
 
 .checkbox-container.stroke .check-mark {
@@ -62,7 +71,10 @@ input[type='checkbox'] {
     padding: 0 1px 0 1px;
 }
 
-/* When the checkbox is checked, add a blue background */
+.checkbox-container.disabled.stroke .check-mark:before {
+    color: #cecece;
+}
+
 .checkbox-container input:checked ~ .check-mark:before {
     content: "\f00c";
     font-weight: 900;
