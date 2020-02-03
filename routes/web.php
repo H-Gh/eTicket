@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', "HomeController@index")->name("home");
-Route::get('/home', "HomeController@index")->name("home");
+Route::get('/', "Frontend\\TicketsController@index")
+    ->name("home");
+Route::get('/home', "Frontend\\TicketsController@index")
+    ->name("home");
 
 Auth::routes(
     [
@@ -21,9 +23,13 @@ Auth::routes(
     ]
 );
 
-Route::get("/profile/{user}", "Auth\ProfileController@edit")->name("profile.edit");
+Route::get("/profile/{user}", "Auth\ProfileController@edit")->name(
+    "profile.edit"
+);
 Route::post(
     "/profile/{user}",
     "Auth\ProfileController@update"
 )->name("profile.update");
-Route::get("/ticket/new", "Backend\TicketsController@create")->name("ticket.new");
+Route::get("/ticket/new", "Backend\TicketsController@create")->name(
+    "ticket.new"
+);
