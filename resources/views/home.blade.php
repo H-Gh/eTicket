@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="main-content">
-            <a class="button primary" href="{{ route("ticket.new") }}">{{ __("ticket.New Ticket") }}</a>
+            <a class="button primary mb-4" href="{{ route("ticket.new") }}"><i class="fas fa-plus"></i> {{ __("ticket.New Ticket") }}</a>
             <div class="box rounded">
                 <div class="title">{{ __("ticket.Tickets list") }}</div>
 

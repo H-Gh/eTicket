@@ -1,3 +1,7 @@
-$(document).ready(function () {
-    var $input = $("input[type='checkbox']").input();
-});
+var input;
+$(document).ready(
+    function () {
+        input = $("input[type='checkbox']").input();
+        input.initialize();
+    }
+);

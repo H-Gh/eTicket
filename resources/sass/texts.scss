@@ -1,0 +1,59 @@
+@import "common.variables";
+
+.text.basic,
+.text.primary {
+  color: $primary;
+}
+
+a.text.basic:hover,
+a.text.primary:hover {
+  color: $dark-primary;
+}
+
+.text.secondary {
+  color: $secondary;
+}
+
+a.text.secondary:hover {
+  color: $dark-secondary;
+}
+
+.text.notification {
+  color: $notification;
+}
+
+a.text.notification:hover {
+  color: $dark-notification;
+}
+
+.text.success {
+  color: $success;
+}
+
+a.text.success:hover {
+  color: $dark-success;
+}
+
+.text.warn {
+  color: $warn;
+}
+
+a.text.warn:hover {
+  color: $dark-warn;
+}
+
+.text.danger {
+  color: $danger;
+}
+
+a.text.danger:hover {
+  color: $dark-danger;
+}
+
+.text.dark {
+  color: $dark;
+}
+
+a.text.dark:hover {
+  color: $dark-dark;
+}

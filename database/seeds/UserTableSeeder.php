@@ -1,6 +1,6 @@
 <?php
 /**
- * This class will add default data to database
+ * This class will add super-admin to database
  * PHP version 7.4
  *
  * @category Auth
@@ -14,7 +14,7 @@
 use Illuminate\Database\Seeder;
 
 /**
- * Class DatabaseSeeder
+ * Class UserTableSeeder
  *
  * @category Auth
  * @package  Database\Seeds
@@ -22,16 +22,22 @@ use Illuminate\Database\Seeder;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  */
-class DatabaseSeeder extends Seeder
+class UserTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call(RolesAndPermissionsSeeder::class);
-        $this->call(UserTableSeeder::class);
+        $superAdminUser = new \App\User();
+        $superAdminUser->password = Hash::make(
+            env("SUPER_ADMIN_PASSWORD", "eTicketSuperAdminPassword")
+        );
+        $superAdminUser->email = "superAdmin@" . env("APP_NAME");
+        $superAdminUser->name = "Super Admin";
+        $superAdminUser->assignRole("super-admin");
+        $superAdminUser->save();
     }
 }

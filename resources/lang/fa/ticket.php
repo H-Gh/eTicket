@@ -1,4 +1,6 @@
 <?php
+
 return [
-    "Tickets list" => "لیست درخواست ها"
+    "Tickets list" => "لیست درخواست ها",
+    "New Ticket" => "درخواست جدید"
 ];

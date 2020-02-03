@@ -69002,16 +69002,28 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*****************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend.app.js ./resources/sass/frontend.app.scss ./resources/sass/backend.app.scss ***!
-  \*****************************************************************************************************************/
+/*!***********************************************************************************************************************************************!*\
+  !*** multi ./resources/js/frontend.app.js ./resources/sass/frontend.app.scss ./resources/sass/backend.app.scss ./resources/sass/profile.scss ***!
+  \***********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\js\frontend.app.js */"./resources/js/frontend.app.js");
 __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\frontend.app.scss */"./resources/sass/frontend.app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\backend.app.scss */"./resources/sass/backend.app.scss");
+__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\backend.app.scss */"./resources/sass/backend.app.scss");
+module.exports = __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\profile.scss */"./resources/sass/profile.scss");
 
 
 /***/ })
