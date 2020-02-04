@@ -7,8 +7,12 @@
 }
 
 @media (min-width: 991px) {
-  .page .roles-permissions-container {
+  .page.rtl .roles-permissions-container {
     border-right: 1px solid $light-gray;
+  }
+
+  .page.ltr .roles-permissions-container {
+    border-left: 1px solid $light-gray;
   }
 }
 

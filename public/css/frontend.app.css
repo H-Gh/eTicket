@@ -16335,6 +16335,7 @@ a.text.dark:hover {
 
 .page .submit-button-container {
   margin: 20px;
+  text-align: center;
 }
 
 .page .action-buttons-container {
@@ -16446,6 +16447,42 @@ select:active {
 ul {
   margin: 0;
   padding: 0;
+}
+
+.page .data-table {
+  width: 100%;
+}
+
+.page .data-table thead,
+.page .data-table tbody {
+  border-bottom: 1px solid #f0eff7;
+}
+
+.page .data-table thead tr th {
+  padding: 13px 0;
+}
+
+.page .data-table tbody tr td {
+  padding: 16px 0;
+}
+
+.pagination {
+  margin: 10px auto;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+
+.pagination .page-item {
+  margin: 3px;
+  outline: none;
+}
+
+.page.rtl .page-item:first-child .page-link {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.page.rtl .page-item:last-child .page-link {
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .auth-form-container {

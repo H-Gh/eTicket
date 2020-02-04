@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', "Frontend\\TicketsController@index")
-    ->name("home");
 Route::get('/home', "Frontend\\TicketsController@index")
     ->name("home");
 
@@ -23,13 +21,28 @@ Auth::routes(
     ]
 );
 
-Route::get("/profile/{user}", "Auth\ProfileController@edit")->name(
-    "profile.edit"
-);
-Route::post(
-    "/profile/{user}",
-    "Auth\ProfileController@update"
-)->name("profile.update");
-Route::get("/ticket/new", "Backend\TicketsController@create")->name(
-    "ticket.new"
-);
+Route::name("profile.")
+    ->prefix("/profile")
+    ->group(
+        function () {
+            Route::get("{user}", "Auth\ProfileController@edit")
+                ->name("edit");
+            Route::post("{user}", "Auth\ProfileController@update")
+                ->name("update");
+        }
+    );
+
+Route::name("ticket.")
+    ->prefix("/ticket")
+    ->group(
+        function () {
+            Route::get('list', "Frontend\\TicketsController@index")
+                ->name("list");
+            Route::get("new", "Frontend\TicketsController@create")
+                ->name("create");
+            Route::post("save", "Frontend\TicketsController@store")
+                ->name("store");
+            Route::get("show/{ticket}", "Frontend\TicketsController@show")
+                ->name("show");
+        }
+    );
