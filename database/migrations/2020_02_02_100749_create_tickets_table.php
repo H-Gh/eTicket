@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTicketTable extends Migration
+class CreateTicketsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,11 +18,13 @@ class CreateTicketTable extends Migration
             function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->text("title");
-                $table->text("answer");
-                $table->string("status");
+                $table->longText("text");
+                $table->string("status")->default(\App\Ticket::PENDING);
+                $table->text("answer")->nullable();
+                $table->integer("assigned_to")->nullable();
+                $table->integer("answered_by")->nullable();
+                $table->integer("answered_at")->nullable();
                 $table->integer("created_by");
-                $table->integer("assigned_to");
-                $table->integer("answered_by");
                 $table->timestamps();
             }
         );
@@ -35,6 +37,6 @@ class CreateTicketTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket');
+        Schema::dropIfExists('tickets');
     }
 }
