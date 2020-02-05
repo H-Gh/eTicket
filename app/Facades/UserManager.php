@@ -16,6 +16,7 @@
 namespace App\Facades;
 
 use App\User;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -26,11 +27,11 @@ use Illuminate\Support\Facades\Facade;
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
- * @method   static void updatePassword(User $user, string $password)
+ * @method   static array purifyRequest(FormRequest $request)
  * @method   static void updateRoles(User $user, array $roles)
  * @method   static void updatePermissions(User $user, array $permissions)
  */
-class UserUpdater extends Facade
+class UserManager extends Facade
 {
     /**
      * This method will define accessor of UserUpdaterFacade
@@ -39,6 +40,6 @@ class UserUpdater extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'userUpdater';
+        return 'userManager';
     }
 }

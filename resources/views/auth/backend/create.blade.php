@@ -7,11 +7,11 @@
 @endsection
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("auth.Profile")])
+        @include("backend.top-bar", ["pageTitle" => __("auth.New user")])
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
-                <form method="POST" action="{{ route("admin.user.create") }}">
+                <form method="POST" action="{{ route("admin.user.store") }}">
                     @csrf
                     <div class="content">
                         <div class="container-fluid" style="display: flex">

@@ -15,10 +15,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Facades\TicketManager;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UpdateTicketRequest;
+use App\Http\Requests\TicketUpdateRequest;
 use App\Ticket;
 use App\User;
-use Auth;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -103,12 +102,12 @@ class TicketsController extends Controller
     /**
      * Update the ticket in storage.
      *
-     * @param UpdateTicketRequest $request The received request
+     * @param TicketUpdateRequest $request The received request
      * @param Ticket              $ticket  The target ticket
      *
      * @return RedirectResponse|Redirector
      */
-    public function update(UpdateTicketRequest $request, Ticket $ticket)
+    public function update(TicketUpdateRequest $request, Ticket $ticket)
     {
         $request->validated();
         $updateResult = TicketManager::update($request, $ticket);

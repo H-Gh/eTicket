@@ -72,5 +72,6 @@ return [
     "Logout" => "خروج",
     "Users" => "کاربران",
     "Users list" => "لیست کاربران",
-    "New user" => "افزودن کاربر"
+    "New user" => "افزودن کاربر",
+    "User created successfully." => "کاربر با موفقیت ساخته شد.",
 ];

@@ -15,7 +15,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Facades\TicketManager;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTicketRequest;
+use App\Http\Requests\TicketStoreRequest;
 use App\Ticket;
 use Auth;
 use Illuminate\Contracts\View\Factory;
@@ -75,11 +75,11 @@ class TicketsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param StoreTicketRequest $request Incoming request
+     * @param TicketStoreRequest $request Incoming request
      *
      * @return RedirectResponse|Redirector
      */
-    public function store(StoreTicketRequest $request)
+    public function store(TicketStoreRequest $request)
     {
         $request->validated();
         TicketManager::create($request);

@@ -13,8 +13,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Facades\UserUpdater;
+use App\Facades\UserManager;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserUpdateRequest;
 use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -54,19 +55,18 @@ class ProfileController extends Controller
     /**
      * Store changes that user submitted
      *
-     * @param User $user User object to be update
+     * @param UserUpdateRequest $request The received request
+     * @param User              $user    User object to be update
      *
      * @return RedirectResponse
      */
-    public function update(User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
-        request()->validate(
-            ["name" => "required", "password" => "nullable|confirmed|min:8"]
-        );
-
-        UserUpdater::updatePassword($user, request("password"));
-        UserUpdater::updateRoles($user, request("roles"));
-        UserUpdater::updatePermissions($user, request("permissions"));
+        $request->validated();
+        $allRequestItems = UserManager::purifyRequest($request);
+        $user->update($allRequestItems);
+        UserManager::updateRoles($user, request("roles"));
+        UserManager::updatePermissions($user, request("permissions"));
 
         return redirect()
             ->back()

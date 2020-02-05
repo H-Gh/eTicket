@@ -23,7 +23,7 @@
                         name="permissions[{{ $permission["index"] }}]"
                         value="{{ $permission["index"] }}"
                         class="stroke"
-                        @if (old($permission["index"]) === "on" || !empty($user) && $user->hasPermissionTo($permission["index"]))
+                        @if ((isset(old("permissions")[$permission["index"]]) && old("permissions")[$permission["index"]] === $permission["index"]) || !empty($user) && $user->hasPermissionTo($permission["index"]))
                         checked="checked"
                         @endif
                 />

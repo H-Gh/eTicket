@@ -4,9 +4,9 @@
     </div>
     <div class="form-group">
         <label for="email">{{ __("auth.Email address") }}</label>
-        <input type="text" id="email" value="{{ old("email", isset($user) ? $user->email : null) }}"
-               readonly="readonly"
+        <input type="text" id="email" name="email" value="{{ old("email", isset($user) ? $user->email : null) }}"
                @if((isset($enableEmail) && !$enableEmail) || !isset($enableEmail))
+               readonly="readonly"
                disabled
                 @endif
         />

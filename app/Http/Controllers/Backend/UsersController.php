@@ -13,9 +13,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Facades\UserManager;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserStoreRequest;
 use App\User;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -31,6 +34,23 @@ use Illuminate\View\View;
  */
 class UsersController extends Controller
 {
+    /**
+     * UsersController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware("auth");
+        $this->middleware(
+            ["role_or_permission:user.admin|user.add"]
+        )->only(["create", "store"]);
+        $this->middleware(
+            ["role_or_permission:user.admin|user.edit"]
+        )->only(["edit", "update"]);
+        $this->middleware(
+            ["role_or_permission:user.admin|user.remove"]
+        )->only("destroy");
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -55,13 +75,21 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param UserStoreRequest $request The received request
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
-        //
+        $request->validated();
+        $requestAllItems = UserManager::purifyRequest($request);
+        $user = User::create($requestAllItems);
+        UserManager::updateRoles($user, request("roles"));
+        UserManager::updatePermissions($user, request("permissions"));
+
+        return redirect()
+            ->route("admin.user.list")
+            ->with("success", "auth.User created successfully.");
     }
 
     /**
@@ -79,13 +107,18 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param User $user
+     * @param User $user The target user
      *
-     * @return Response
+     * @return Factory|View
      */
     public function edit(User $user)
     {
-        //
+        return \view(
+            "auth.backend.update",
+            [
+                "user", $user
+            ]
+        );
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /**
- * The provider of UserUpdater Facade
+ * The provider of userManager Facade
  * PHP version 7.4
  *
  * @category Provider
@@ -17,7 +17,7 @@ use App;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class UserUpdaterProvider
+ * Class UserManagerProvider
  *
  * @category Provider
  * @package  App\Providers
@@ -25,7 +25,7 @@ use Illuminate\Support\ServiceProvider;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  */
-class UserUpdaterProvider extends ServiceProvider
+class UserManagerProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -35,9 +35,9 @@ class UserUpdaterProvider extends ServiceProvider
     public function register()
     {
         App::bind(
-            'userUpdater',
+            'userManager',
             function () {
-                return new App\Services\UserUpdaterService();
+                return new App\Services\UserManagerService();
             }
         );
     }
