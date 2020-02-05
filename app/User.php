@@ -77,6 +77,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function tickets()
     {
-        return $this->hasMany(Ticket::class, "id", "created_by");
+        return $this->hasMany(Ticket::class, "created_by", "id");
     }
 }

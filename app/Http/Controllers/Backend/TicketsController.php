@@ -64,11 +64,6 @@ class TicketsController extends Controller
             "ticket.backend.list",
             [
                 "tickets" => Ticket::orderBy("created_at")
-                    ->where(
-                        "created_by",
-                        "=",
-                        Auth::user()->getAuthIdentifier()
-                    )
                     ->paginate(config("eTicket.pagination_count"))
             ]
         );
