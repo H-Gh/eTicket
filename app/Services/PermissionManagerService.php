@@ -35,6 +35,18 @@ class PermissionManagerService
     public function getName(string $roleOrPermission): ?PermissionName
     {
         switch ($roleOrPermission) {
+        case "super-admin":
+            return (new PermissionName())
+                ->setDatabaseName("super-admin")
+                ->setName("Super admin")
+                ->setCategory("auth");
+            break;
+        case "user.admin":
+            return (new PermissionName())
+                ->setDatabaseName("user.admin")
+                ->setName("Users admin")
+                ->setCategory("auth");
+            break;
         case "user.add":
             return (new PermissionName())
                 ->setDatabaseName("user.add")
@@ -58,6 +70,12 @@ class PermissionManagerService
                 ->setDatabaseName("user.permission.assign")
                 ->setName("Assign permissions")
                 ->setCategory("auth");
+            break;
+        case "ticket.admin":
+            return (new PermissionName())
+                ->setDatabaseName("ticket.admin")
+                ->setName("Ticket admin")
+                ->setCategory("ticket");
             break;
         case "ticket.add":
             return (new PermissionName())
