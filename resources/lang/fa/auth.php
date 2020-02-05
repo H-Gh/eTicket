@@ -54,6 +54,7 @@ return [
     "Edit user" => "ویرایش کاربر",
     "Delete user" => "حذف کاربر",
     "Assign permissions" => "مدیریت سطحوح دسترسی",
+    "user.permission.assign" => "مدیریت سطحوح دسترسی",
     "User can assign roles or permissions to an existing user of system." =>
         "کاربر میتواند نقش و یا سطوح دسترسی را به دیگر کاربران اعطا نماید.",
     "This role will handle any action of users." =>
@@ -76,4 +77,9 @@ return [
     "User created successfully." => "کاربر با موفقیت ساخته شد.",
     "Edit user #:number" => "ویرایش کاربر شماره :number",
     "User updated successfully." => "کاربر با موفقیت ویرایش شد.",
+    "User #:number" => "کاربر شماره :number",
+    "Remove user" => "حذف کاربر",
+    "Roles" => "نقش ها",
+    "Permissions" => "سطوح دسترسی",
+
 ];

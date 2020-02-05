@@ -1,6 +1,6 @@
 <?php
 /**
- * This class handle all events of Tickets
+ * This class handle everything about roles or permissions
  * PHP version PHP 7.4
  *
  * @category Facade
@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * This class handle all events of Tickets
+ * This class handle everything about roles or permissions
  * PHP version PHP 7.4
  *
  * @category Facade
@@ -26,19 +26,18 @@ use Illuminate\Support\Facades\Facade;
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
- * @method   static bool create(Request $request)
- * @method   static bool update(Request $request, Ticket $ticket)
- * @method   static bool isAnswered(Request $request)
+ * @method   static string getName(string $roleOrPermission)
+ * @method   static string getTranslatedName(string $roleOrPermission)
  */
-class TicketManager extends Facade
+class PermissionManager extends Facade
 {
     /**
-     * This method will define accessor of TicketManager
+     * This method will define accessor of PermissionManager
      *
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'ticketUpdater';
+        return 'permissionManager';
     }
 }

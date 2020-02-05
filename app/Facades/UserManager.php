@@ -20,7 +20,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class UserUpdaterFacade
+ * Class UserManager
  *
  * @category User
  * @package  App\Facades
@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Facade;
 class UserManager extends Facade
 {
     /**
-     * This method will define accessor of UserUpdaterFacade
+     * This method will define accessor of UserManager
      *
      * @return string
      */

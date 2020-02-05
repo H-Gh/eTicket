@@ -95,13 +95,14 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param User $user
+     * @param User $user The target user
      *
-     * @return Response
+     * @return Factory|View
      */
     public function show(User $user)
     {
-        //
+        return \view("auth.backend.show")
+            ->with("user", $user);
     }
 
     /**
