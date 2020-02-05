@@ -67,27 +67,9 @@ return [
         "با حذف یک کاربر، تمامی درخواست های وی نیز حذف خواهند شد.",
     "User will be able to make others as admin of system." =>
         "کاربر می تواند دیگر کاربران را مدیر سیستم کند.",
-    "Tickets admin" => "مدیر درخواست ها",
-    "Add ticket" => "افزودن درخواست",
-    "Edit ticket" => "ویرایش درخواست",
-    "Delete ticket" => "حذف درخواست",
-    "Answer ticket" => "پاسخ به درخواست",
-    "Assign answerer" => "انتخاب پاسخ دهنده",
-    "This role will handle any action of tickets" =>
-        <<<TAG
-این نقش میتواند تمامی عمل های مدیرتی مربوط به نقش ها و سطوح دسترسی
-کاربران را انجام دهد.
-TAG
-,
-    "User can add a new ticket to system." =>
-        "کاربر میتواند درخواست جدید ایجاد نماید.",
-    "User can edit an existing ticket of system." =>
-        "کاربر می تواند درخواست موجود در سیستم را ویرایش کند",
-    "User can delete an existing ticket of system." =>
-        "کاربر می تواند درخواست موجود در سیستم را حذف کند.",
-    "User can answer an existing ticket of system." =>
-        "کاربر می تواند درخواست موجود در سیستم را پاسخ دهد.",
-    "User can assign another user to answer an existing ticket of system." =>
-        "کاربر می تواند کاربر دیگری را به عنوان پاسخ دهنده به درخواست تعیین کند.",
     "Settings has been saved successfully." => "تنظیمات با موفقیت ذخیره شدند.",
+    "Logout" => "خروج",
+    "Users" => "کاربران",
+    "Users list" => "لیست کاربران",
+    "New user" => "افزودن کاربر"
 ];

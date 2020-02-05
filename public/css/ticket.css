@@ -24,3 +24,7 @@
   border-top: 1px solid #e7e7e7;
 }
 
+.page table.ticket-list .options i {
+  font-size: 15px;
+}
+

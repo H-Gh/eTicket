@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\TicketManagerProvider;
 use App\Providers\UserUpdaterProvider;
 
 return [
@@ -178,7 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Spatie\Permission\PermissionServiceProvider::class,
-        UserUpdaterProvider::class
+        UserUpdaterProvider::class,
+        TicketManagerProvider::class
     ],
 
     /*

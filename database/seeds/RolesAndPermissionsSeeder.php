@@ -52,6 +52,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Tickets permissions
         Permission::create(['name' => 'ticket.add']);
         Permission::create(['name' => 'ticket.edit']);
+        Permission::create(['name' => 'ticket.edit.content']);
         Permission::create(['name' => 'ticket.remove']);
         Permission::create(['name' => 'ticket.answer']);
         Permission::create(['name' => 'ticket.assign']);

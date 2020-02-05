@@ -68980,10 +68980,10 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 /***/ }),
 
-/***/ "./resources/sass/backend.app.scss":
-/*!*****************************************!*\
-  !*** ./resources/sass/backend.app.scss ***!
-  \*****************************************/
+/***/ "./resources/sass/core/backend/backend.app.scss":
+/*!******************************************************!*\
+  !*** ./resources/sass/core/backend/backend.app.scss ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -68991,10 +68991,10 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 /***/ }),
 
-/***/ "./resources/sass/frontend.app.scss":
-/*!******************************************!*\
-  !*** ./resources/sass/frontend.app.scss ***!
-  \******************************************/
+/***/ "./resources/sass/core/frontend/frontend.app.scss":
+/*!********************************************************!*\
+  !*** ./resources/sass/core/frontend/frontend.app.scss ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -69002,10 +69002,10 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 /***/ }),
 
-/***/ "./resources/sass/profile.scss":
-/*!*************************************!*\
-  !*** ./resources/sass/profile.scss ***!
-  \*************************************/
+/***/ "./resources/sass/profile/profile.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/profile/profile.scss ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -69013,10 +69013,21 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 /***/ }),
 
-/***/ "./resources/sass/ticket.scss":
-/*!************************************!*\
-  !*** ./resources/sass/ticket.scss ***!
-  \************************************/
+/***/ "./resources/sass/ticket/backend/style.scss":
+/*!**************************************************!*\
+  !*** ./resources/sass/ticket/backend/style.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/ticket/common/style.scss":
+/*!*************************************************!*\
+  !*** ./resources/sass/ticket/common/style.scss ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -69025,17 +69036,18 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/frontend.app.js ./resources/sass/frontend.app.scss ./resources/sass/backend.app.scss ./resources/sass/profile.scss ./resources/sass/ticket.scss ***!
-  \****************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/frontend.app.js ./resources/sass/core/frontend/frontend.app.scss ./resources/sass/core/backend/backend.app.scss ./resources/sass/profile/profile.scss ./resources/sass/ticket/backend/style.scss ./resources/sass/ticket/common/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\js\frontend.app.js */"./resources/js/frontend.app.js");
-__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\frontend.app.scss */"./resources/sass/frontend.app.scss");
-__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\backend.app.scss */"./resources/sass/backend.app.scss");
-__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\profile.scss */"./resources/sass/profile.scss");
-module.exports = __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\ticket.scss */"./resources/sass/ticket.scss");
+__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\core\frontend\frontend.app.scss */"./resources/sass/core/frontend/frontend.app.scss");
+__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\core\backend\backend.app.scss */"./resources/sass/core/backend/backend.app.scss");
+__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\profile\profile.scss */"./resources/sass/profile/profile.scss");
+__webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\ticket\backend\style.scss */"./resources/sass/ticket/backend/style.scss");
+module.exports = __webpack_require__(/*! C:\xampp\php7.3\htdocs\eTicket\resources\sass\ticket\common\style.scss */"./resources/sass/ticket/common/style.scss");
 
 
 /***/ })

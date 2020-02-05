@@ -1,4 +1,15 @@
 <?php
+/**
+ * The provider of UserUpdater Facade
+ * PHP version 7.4
+ *
+ * @category Provider
+ * @package  App\Providers
+ * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @version  GIT: <git_id>
+ * @link     null
+ */
 
 namespace App\Providers;
 
@@ -8,7 +19,11 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class UserUpdaterProvider
  *
- * @package App\Providers
+ * @category Provider
+ * @package  App\Providers
+ * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     null
  */
 class UserUpdaterProvider extends ServiceProvider
 {
