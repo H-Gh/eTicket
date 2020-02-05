@@ -46,11 +46,11 @@
                     @can("ticket.remove")
                         <a href="#"
                            onclick="event.preventDefault();
-                                                     document.getElementById('ticket-remove-form').submit();"
+                                   document.getElementById('ticket-{{ $ticket->id }}-remove-form').submit();"
                         >
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        <form id="ticket-remove-form"
+                        <form id="ticket-{{ $ticket->id }}-remove-form"
                               action="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}" method="POST"
                               style="display: none;">
                             @csrf
