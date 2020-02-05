@@ -23,7 +23,7 @@ class CreateTicketsTable extends Migration
                 $table->text("answer")->nullable();
                 $table->integer("assigned_to")->nullable();
                 $table->integer("answered_by")->nullable();
-                $table->integer("answered_at")->nullable();
+                $table->timestamp("answered_at")->nullable();
                 $table->integer("created_by");
                 $table->timestamps();
             }

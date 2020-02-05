@@ -13,13 +13,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Facades\TicketManager;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTicketRequest;
 use App\Ticket;
 use Auth;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
 
@@ -43,12 +43,6 @@ class TicketsController extends Controller
         $this->middleware(
             ["role_or_permission:ticket.admin|ticket.add"]
         )->only(["create", "store"]);
-        $this->middleware(
-            ["role_or_permission:ticket.admin|ticket.edit"]
-        )->only(["edit", "update"]);
-        $this->middleware(
-            ["role_or_permission:ticket.admin|ticket.remove"]
-        )->only("destroy");
     }
 
     /**
@@ -59,7 +53,7 @@ class TicketsController extends Controller
     public function index()
     {
         return view(
-            "frontend.ticket.list",
+            "ticket.frontend.list",
             [
                 "tickets" => Ticket::orderBy("created_at")
                     ->where(
@@ -68,6 +62,7 @@ class TicketsController extends Controller
                         Auth::user()->getAuthIdentifier()
                     )
                     ->paginate(config("eTicket.pagination_count"))
+//                "tickets" => ""
             ]
         );
     }
@@ -79,31 +74,20 @@ class TicketsController extends Controller
      */
     public function create()
     {
-        return view("frontend.ticket.create");
+        return view("ticket.frontend.create");
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request Incoming request
+     * @param StoreTicketRequest $request Incoming request
      *
      * @return RedirectResponse|Redirector
      */
-    public function store(Request $request)
+    public function store(StoreTicketRequest $request)
     {
-        $validatedAttributes = $request->validate(
-            [
-                "title" => "required",
-                "text" => "required|min:10"
-            ],
-            [],
-            [
-                "title" => __("common.Title"),
-                "text" => __("common.Text")
-            ]
-        );
-        $validatedAttributes["created_by"] = Auth::user()->getAuthIdentifier();
-        Ticket::create($validatedAttributes);
+        $request->validated();
+        TicketManager::create($request);
 
         return redirect()
             ->route("ticket.list")
@@ -126,43 +110,6 @@ TAG
      */
     public function show(Ticket $ticket)
     {
-        return view("frontend.ticket.show")->with(["ticket" => $ticket]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Ticket $ticket
-     *
-     * @return Response
-     */
-    public function edit(Ticket $ticket)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param Ticket  $ticket
-     *
-     * @return Response
-     */
-    public function update(Request $request, Ticket $ticket)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Ticket $ticket
-     *
-     * @return Response
-     */
-    public function destroy(Ticket $ticket)
-    {
-        //
+        return view("ticket.frontend.show")->with(["ticket" => $ticket]);
     }
 }

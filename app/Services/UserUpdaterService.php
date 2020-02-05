@@ -1,10 +1,9 @@
 <?php
-
 /**
  * This Class will handle all things that must be handle during user update
  * PHP version PHP 7.4
  *
- * @category User
+ * @category Service
  * @package  App\Services
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -12,9 +11,7 @@
  * @link     null
  */
 
-
 namespace App\Services;
-
 
 use App\User;
 use Hash;
@@ -22,7 +19,7 @@ use Hash;
 /**
  * Class UserUpdaterService
  *
- * @category User
+ * @category Service
  * @package  App\Services
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License

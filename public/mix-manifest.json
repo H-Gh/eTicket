@@ -3,6 +3,7 @@
     "/js/frontend.app.js": "/js/frontend.app.js",
     "/css/frontend.app.css": "/css/frontend.app.css",
     "/css/backend.app.css": "/css/backend.app.css",
-    "/css/profile.css": "/css/profile.css",
-    "/css/ticket.css": "/css/ticket.css"
+    "/css/profile/profile.css": "/css/profile/profile.css",
+    "/css/ticket/backend/style.css": "/css/ticket/backend/style.css",
+    "/css/ticket/common/style.css": "/css/ticket/common/style.css"
 }

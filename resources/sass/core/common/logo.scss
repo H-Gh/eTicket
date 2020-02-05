@@ -1,0 +1,18 @@
+.logo {
+    width: 100%;
+}
+
+.logo-image {
+    height: 30px;
+    background: url("../../../../public/images/eTicket-small-en.png") center center no-repeat;
+    background-size: 105px 30px;
+    width: 105px;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .logo .logo-image {
+        background: url("../../../../public/images/eTicket-small-logo.png") center center no-repeat;
+        background-size: 30px 30px;
+    }
+}

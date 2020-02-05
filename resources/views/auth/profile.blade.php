@@ -101,15 +101,16 @@
                         "user" => $user,
                         "role" => [
                             "index" => "ticket.admin",
-                            "name" => __("auth.Tickets admin"),
-                            "description" => __("auth.This role will handle any action of tickets")
+                            "name" => __("ticket.Tickets admin"),
+                            "description" => __("ticket.This role will handle any action of tickets")
                         ],
                         "permissions" => [
-                            ["index" => "ticket.add", "name" => __("auth.Add ticket"), "description" => __("auth.User can add a new ticket to system.")],
-                            ["index" => "ticket.edit", "name" => __("auth.Edit ticket"), "description" => __("auth.User can edit an existing ticket of system.")],
-                            ["index" => "ticket.remove", "name" => __("auth.Delete ticket"), "description" => __("auth.User can delete an existing ticket of system.")],
-                            ["index" => "ticket.answer", "name" => __("auth.Answer ticket"), "description" => __("auth.User can answer an existing ticket of system.")],
-                            ["index" => "ticket.assign", "name" => __("auth.Assign answerer"), "description" => __("auth.User can assign another user to answer an existing ticket of system.")],
+                            ["index" => "ticket.add", "name" => __("ticket.Add ticket"), "description" => __("ticket.User can add a new ticket to system.")],
+                            ["index" => "ticket.edit", "name" => __("ticket.Edit ticket"), "description" => __("ticket.User can edit an existing ticket of system.")],
+                            ["index" => "ticket.edit.content", "name" => __("ticket.Edit ticket's content"), "description" => __("ticket.User can edit the title and content an existing ticket of system."), "danger" => __("ticket.User can change others' tickets title or text.")],
+                            ["index" => "ticket.remove", "name" => __("ticket.Delete ticket"), "description" => __("ticket.User can delete an existing ticket of system.")],
+                            ["index" => "ticket.answer", "name" => __("ticket.Answer ticket"), "description" => __("ticket.User can answer an existing ticket of system.")],
+                            ["index" => "ticket.assign", "name" => __("ticket.Assign answerer"), "description" => __("ticket.User can assign another user to answer an existing ticket of system.")],
                         ]
                     ]
                     )
