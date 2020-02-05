@@ -7,7 +7,7 @@
                 name="roles[]"
                 value="{{ $role["index"] }}"
                 class="stroke"
-                @if ($user->hasRole($role["index"]))
+                @if (!empty($user) && $user->hasRole($role["index"]))
                 checked="checked"
                 @endif
         />
@@ -23,7 +23,7 @@
                         name="permissions[]"
                         value="{{ $permission["index"] }}"
                         class="stroke"
-                        @if ($user->hasPermissionTo($permission["index"]))
+                        @if (!empty($user) && $user->hasPermissionTo($permission["index"]))
                         checked="checked"
                         @endif
                 />
