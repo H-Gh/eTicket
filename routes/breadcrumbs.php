@@ -72,3 +72,13 @@ Breadcrumbs::for(
         );
     }
 );
+
+Breadcrumbs::for(
+    "admin.user.edit",
+    function ($trail, $user) {
+        $trail->parent("admin.user.list");
+        $trail->push(
+            __("auth.Edit user #:number", ["number", $user->id])
+        );
+    }
+);

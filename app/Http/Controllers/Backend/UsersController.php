@@ -16,10 +16,10 @@ namespace App\Http\Controllers\Backend;
 use App\Facades\UserManager;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
 
@@ -114,9 +114,9 @@ class UsersController extends Controller
     public function edit(User $user)
     {
         return \view(
-            "auth.backend.update",
+            "auth.backend.edit",
             [
-                "user", $user
+                "user" => $user
             ]
         );
     }
@@ -124,14 +124,22 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param User    $user
+     * @param UserUpdateRequest $request The received request
+     * @param User              $user    The target user
      *
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
-        //
+        $request->validated();
+        $allRequestItems = UserManager::purifyRequest($request);
+        $user->update($allRequestItems);
+        UserManager::updateRoles($user, request("roles"));
+        UserManager::updatePermissions($user, request("permissions"));
+
+        return redirect()
+            ->back()
+            ->with("success", __("auth.User updated successfully."));
     }
 
     /**

@@ -74,4 +74,6 @@ return [
     "Users list" => "لیست کاربران",
     "New user" => "افزودن کاربر",
     "User created successfully." => "کاربر با موفقیت ساخته شد.",
+    "Edit user #:number" => "ویرایش کاربر شماره :number",
+    "User updated successfully." => "کاربر با موفقیت ویرایش شد.",
 ];
