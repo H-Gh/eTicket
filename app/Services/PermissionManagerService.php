@@ -32,7 +32,7 @@ class PermissionManagerService
      *
      * @return PermissionName
      */
-    public function getName(string $roleOrPermission): PermissionName
+    public function getName(string $roleOrPermission): ?PermissionName
     {
         switch ($roleOrPermission) {
         case "user.add":
@@ -107,7 +107,7 @@ class PermissionManagerService
      *
      * @return string
      */
-    public function getTranslatedName(string $roleOrPermission): string
+    public function getTranslatedName(string $roleOrPermission): ?string
     {
         $name = $this->getName($roleOrPermission);
         if (empty($name)) {
