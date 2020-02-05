@@ -1,6 +1,6 @@
 <?php
 /**
- * The request for creating tickets
+ * The request for updating tickets
  * PHP version 7.4
  *
  * @category Request
@@ -14,13 +14,11 @@
 namespace App\Http\Requests;
 
 use App\Ticket;
-use Auth;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 /**
- * Class StoreTicketRequest
+ * Class TicketUpdateRequest
  *
  * @category Request
  * @package  App\Http\Requests
@@ -28,7 +26,7 @@ use Illuminate\Validation\Rule;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  */
-class StoreTicketRequest extends FormRequest
+class TicketUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -37,13 +35,12 @@ class StoreTicketRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->hasAny(
-            ['status', 'answer', 'assigned_to', 'answered_by', 'answered_at']
-        )
-        ) {
+        if ($this->user()->can("ticket.edit.content")) {
+            return true;
+        }
+        if ($this->hasAny(["title", "text", "created_by", "created_at"])) {
             return false;
         }
-
         return true;
     }
 
@@ -55,13 +52,16 @@ class StoreTicketRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required",
-            "text" => "required|min:10",
+            "title" => "nullable",
+            "text" => "nullable|min:10",
+            "answer" => "nullable",
             "status" => [
                 "required",
                 Rule::in([Ticket::PENDING, Ticket::REJECTED, Ticket::ANSWERED])
             ],
-            "created_by" => "exists:App\User,id"
+            "assigned_to" => "nullable|exists:App\User,id",
+            "answered_at" => "nullable|date",
+            "answered_by" => "nullable|exists:App\User,id"
         ];
     }
 
@@ -76,21 +76,5 @@ class StoreTicketRequest extends FormRequest
             "title" => __("common.Title"),
             "text" => __("common.Text")
         ];
-    }
-
-
-    /**
-     * Get the validator instance for the request.
-     *
-     * @return Validator
-     */
-    protected function getValidatorInstance()
-    {
-        $data = $this->all();
-        $data["created_by"] = Auth::user()->getAuthIdentifier();
-        $data["status"] = Ticket::PENDING;
-        $this->getInputSource()->replace($data);
-
-        return parent::getValidatorInstance();
     }
 }

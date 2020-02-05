@@ -1,6 +1,6 @@
 <?php
 /**
- * The request for updating tickets
+ * The request for creating tickets
  * PHP version 7.4
  *
  * @category Request
@@ -13,13 +13,14 @@
 
 namespace App\Http\Requests;
 
-use App\Facades\TicketManager;
 use App\Ticket;
+use Auth;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 /**
- * Class UpdateTicketRequest
+ * Class TicketStoreRequest
  *
  * @category Request
  * @package  App\Http\Requests
@@ -27,7 +28,7 @@ use Illuminate\Validation\Rule;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  */
-class UpdateTicketRequest extends FormRequest
+class TicketStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -36,12 +37,13 @@ class UpdateTicketRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->user()->can("ticket.edit.content")) {
-            return true;
-        }
-        if ($this->hasAny(["title", "text", "created_by", "created_at"])) {
+        if ($this->hasAny(
+            ['status', 'answer', 'assigned_to', 'answered_by', 'answered_at']
+        )
+        ) {
             return false;
         }
+
         return true;
     }
 
@@ -53,16 +55,13 @@ class UpdateTicketRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "nullable",
-            "text" => "nullable|min:10",
-            "answer" => "nullable",
+            "title" => "required",
+            "text" => "required|min:10",
             "status" => [
                 "required",
                 Rule::in([Ticket::PENDING, Ticket::REJECTED, Ticket::ANSWERED])
             ],
-            "assigned_to" => "nullable|exists:App\User,id",
-            "answered_at" => "nullable|date",
-            "answered_by" => "nullable|exists:App\User,id"
+            "created_by" => "exists:App\User,id"
         ];
     }
 
@@ -77,5 +76,21 @@ class UpdateTicketRequest extends FormRequest
             "title" => __("common.Title"),
             "text" => __("common.Text")
         ];
+    }
+
+
+    /**
+     * Get the validator instance for the request.
+     *
+     * @return Validator
+     */
+    protected function getValidatorInstance()
+    {
+        $data = $this->all();
+        $data["created_by"] = Auth::user()->getAuthIdentifier();
+        $data["status"] = Ticket::PENDING;
+        $this->getInputSource()->replace($data);
+
+        return parent::getValidatorInstance();
     }
 }

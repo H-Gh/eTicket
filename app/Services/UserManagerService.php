@@ -1,6 +1,6 @@
 <?php
 /**
- * This Class will handle all things that must be handle during user update
+ * This Class will handle all things that must be handle during user management
  * PHP version PHP 7.4
  *
  * @category Service
@@ -15,9 +15,10 @@ namespace App\Services;
 
 use App\User;
 use Hash;
+use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * Class UserUpdaterService
+ * Class UserManagerService
  *
  * @category Service
  * @package  App\Services
@@ -25,23 +26,25 @@ use Hash;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  */
-class UserUpdaterService
+class UserManagerService
 {
     /**
      * This method check entry password, update the password if not empty
      *
-     * @param User   $user     The target User
-     * @param string $password The password
+     * @param FormRequest $request The received request
      *
-     * @return void
+     * @return array
      */
-    public function updatePassword(User $user, ?string $password)
+    public function purifyRequest(FormRequest $request): array
     {
-        if (empty($password)) {
-            return;
+        $allRequests = $request->all();
+        if (empty($allRequests["password"])) {
+            unset($allRequests["password"]);
+        } else {
+            $allRequests["password"] = Hash::make($allRequests["password"]);
         }
-        $user->password = Hash::make($password);
-        $user->save();
+
+        return $allRequests;
     }
 
     /**

@@ -10,7 +10,21 @@ Breadcrumbs::for(
 );
 
 Breadcrumbs::for(
+    "frontend.index",
+    function ($trail) {
+        $trail->push(__("common.Home"), route('home'));
+    }
+);
+
+Breadcrumbs::for(
     "admin.home",
+    function ($trail) {
+        $trail->push(__("common.Admin dashboard"), route('admin.home'));
+    }
+);
+
+Breadcrumbs::for(
+    "backend.index",
     function ($trail) {
         $trail->push(__("common.Admin dashboard"), route('admin.home'));
     }
@@ -37,8 +51,7 @@ Breadcrumbs::for(
     function ($trail, $ticket) {
         $trail->parent("admin.ticket.list");
         $trail->push(
-            __("ticket.Edit ticket #:number", ["number" => $ticket->id]),
-            route('admin.ticket.edit', $ticket)
+            __("ticket.Edit ticket #:number", ["number" => $ticket->id])
         );
     }
 );
@@ -48,8 +61,48 @@ Breadcrumbs::for(
     function ($trail, $ticket) {
         $trail->parent("admin.ticket.list");
         $trail->push(
-            __("ticket.Ticket #:number", ["number" => $ticket->id]),
-            route('admin.ticket.show', $ticket)
+            __("ticket.Ticket #:number", ["number" => $ticket->id])
+        );
+    }
+);
+
+Breadcrumbs::for(
+    "admin.user.list",
+    function ($trail) {
+        $trail->parent("admin.home");
+        $trail->push(
+            __("auth.Users list"),
+            route("admin.user.list")
+        );
+    }
+);
+
+Breadcrumbs::for(
+    "admin.user.create",
+    function ($trail) {
+        $trail->parent("admin.user.list");
+        $trail->push(
+            __("auth.New user")
+        );
+    }
+);
+
+Breadcrumbs::for(
+    "admin.user.edit",
+    function ($trail, $user) {
+        $trail->parent("admin.user.list");
+        $trail->push(
+            __("auth.Edit user #:number", ["number" => $user->id])
+        );
+    }
+);
+
+Breadcrumbs::for(
+    "admin.user.show",
+    function ($trail, $user) {
+        $trail->parent("admin.user.list");
+        $trail->push(
+            __("auth.User #:number", ["number" => $user->id])
         );
     }
 );

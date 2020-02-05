@@ -1,9 +1,10 @@
 <?php
+
 /**
- * This class handle all events of Tickets
+ * This class is a Facade class for UserUpdaterService
  * PHP version PHP 7.4
  *
- * @category Facade
+ * @category User
  * @package  App\Facades
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -11,34 +12,34 @@
  * @link     null
  */
 
+
 namespace App\Facades;
 
-use App\Ticket;
-use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * This class handle all events of Tickets
- * PHP version PHP 7.4
+ * Class UserManager
  *
- * @category Facade
+ * @category User
  * @package  App\Facades
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
- * @method   static bool create(Request $request)
- * @method   static bool update(Request $request, Ticket $ticket)
- * @method   static bool isAnswered(Request $request)
+ * @method   static array purifyRequest(FormRequest $request)
+ * @method   static void updateRoles(User $user, array $roles)
+ * @method   static void updatePermissions(User $user, array $permissions)
  */
-class TicketManager extends Facade
+class UserManager extends Facade
 {
     /**
-     * This method will define accessor of TicketManager
+     * This method will define accessor of UserManager
      *
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'ticketUpdater';
+        return 'userManager';
     }
 }

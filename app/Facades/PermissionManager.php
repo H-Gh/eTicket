@@ -1,10 +1,9 @@
 <?php
-
 /**
- * This class is a Facade class for UserUpdaterService
+ * This class handle everything about roles or permissions
  * PHP version PHP 7.4
  *
- * @category User
+ * @category Facade
  * @package  App\Facades
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
@@ -12,33 +11,33 @@
  * @link     null
  */
 
-
 namespace App\Facades;
 
-use App\User;
+use App\Ticket;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class UserUpdaterFacade
+ * This class handle everything about roles or permissions
+ * PHP version PHP 7.4
  *
- * @category User
+ * @category Facade
  * @package  App\Facades
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
- * @method   static void updatePassword(User $user, string $password)
- * @method   static void updateRoles(User $user, array $roles)
- * @method   static void updatePermissions(User $user, array $permissions)
+ * @method   static string getName(string $roleOrPermission)
+ * @method   static string getTranslatedName(string $roleOrPermission)
  */
-class UserUpdater extends Facade
+class PermissionManager extends Facade
 {
     /**
-     * This method will define accessor of UserUpdaterFacade
+     * This method will define accessor of PermissionManager
      *
      * @return string
      */
     protected static function getFacadeAccessor()
     {
-        return 'userUpdater';
+        return 'permissionManager';
     }
 }
