@@ -9,7 +9,7 @@
                     @include(
 "auth.role-permissions",
 [
-"user" => $user,
+"user" => (isset($user) ? $user : null),
 "role" => [
 "index" => "user.admin",
 "name" => __("auth.User admin"),
@@ -46,7 +46,7 @@
                     @include(
 "auth.role-permissions",
 [
-"user" => $user,
+"user" => (isset($user) ? $user : null),
 "role" => [
 "index" => "ticket.admin",
 "name" => __("ticket.Tickets admin"),

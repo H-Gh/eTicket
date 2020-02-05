@@ -62,3 +62,13 @@ Breadcrumbs::for(
         );
     }
 );
+
+Breadcrumbs::for(
+    "admin.user.create",
+    function ($trail) {
+        $trail->parent("admin.user.list");
+        $trail->push(
+            __("auth.New user")
+        );
+    }
+);

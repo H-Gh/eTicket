@@ -48,7 +48,7 @@ class ProfileController extends Controller
      */
     public function edit(User $user)
     {
-        return view("auth.profile", ["user" => $user]);
+        return view("auth.frontend.profile", ["user" => $user]);
     }
 
     /**

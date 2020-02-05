@@ -45,11 +45,11 @@ class UsersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Factory|View
      */
     public function create()
     {
-        //
+        return view("auth.backend.create");
     }
 
     /**

@@ -4,10 +4,10 @@
         <input
                 type="checkbox"
                 id="{{ $role["index"] }}"
-                name="roles[]"
+                name="roles[{{ $role["index"] }}]"
                 value="{{ $role["index"] }}"
                 class="stroke"
-                @if (!empty($user) && $user->hasRole($role["index"]))
+                @if (old($role["index"]) === "on" || !empty($user) && $user->hasRole($role["index"]))
                 checked="checked"
                 @endif
         />
@@ -20,10 +20,10 @@
                 <input
                         type="checkbox"
                         id="{{ $permission["index"] }}"
-                        name="permissions[]"
+                        name="permissions[{{ $permission["index"] }}]"
                         value="{{ $permission["index"] }}"
                         class="stroke"
-                        @if (!empty($user) && $user->hasPermissionTo($permission["index"]))
+                        @if (old($permission["index"]) === "on" || !empty($user) && $user->hasPermissionTo($permission["index"]))
                         checked="checked"
                         @endif
                 />
