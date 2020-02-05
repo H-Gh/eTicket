@@ -49,7 +49,7 @@ return [
     "Profile" => "حساب کاربری",
     "Basic information" => "اطلاعات پایه",
     "Roles and permissions" => "نقش ها و سطوح دسترسی",
-    "User admin" => "مدیر کاربران",
+    "Users admin" => "مدیر کاربران",
     "Add user" => "افزودن کاربر",
     "Edit user" => "ویرایش کاربر",
     "Delete user" => "حذف کاربر",
@@ -82,4 +82,5 @@ return [
     "Roles" => "نقش ها",
     "Permissions" => "سطوح دسترسی",
     "User successfully deleted." => "کاربر با موفقیت حذف شد.",
+    "Super admin" => "مدیر کل",
 ];

@@ -12,7 +12,7 @@
 "user" => (isset($user) ? $user : null),
 "role" => [
 "index" => "user.admin",
-"name" => __("auth.User admin"),
+"name" => __("auth.Users admin"),
 "description" => __("auth.This role will handle any action of users.")
 ],
 "permissions" => [
