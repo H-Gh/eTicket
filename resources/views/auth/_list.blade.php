@@ -28,11 +28,11 @@
                     @can("user.remove")
                         <a href="#"
                            onclick="event.preventDefault();
-                                                     document.getElementById('user-remove-form').submit();"
+                                   document.getElementById('user-{{ $user->id }}-remove-form').submit();"
                         >
                             <i class="fas fa-trash-alt"></i>
                         </a>
-                        <form id="user-remove-form"
+                        <form id="user-{{ $user->id }}-remove-form"
                               action="{{ route("admin.user.destroy", ["user" => $user->id]) }}" method="POST"
                               style="display: none;">
                             @csrf

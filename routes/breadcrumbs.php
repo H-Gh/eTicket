@@ -10,7 +10,21 @@ Breadcrumbs::for(
 );
 
 Breadcrumbs::for(
+    "frontend.index",
+    function ($trail) {
+        $trail->push(__("common.Home"), route('home'));
+    }
+);
+
+Breadcrumbs::for(
     "admin.home",
+    function ($trail) {
+        $trail->push(__("common.Admin dashboard"), route('admin.home'));
+    }
+);
+
+Breadcrumbs::for(
+    "backend.index",
     function ($trail) {
         $trail->push(__("common.Admin dashboard"), route('admin.home'));
     }

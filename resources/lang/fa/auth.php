@@ -81,5 +81,5 @@ return [
     "Remove user" => "حذف کاربر",
     "Roles" => "نقش ها",
     "Permissions" => "سطوح دسترسی",
-
+    "User successfully deleted." => "کاربر با موفقیت حذف شد.",
 ];

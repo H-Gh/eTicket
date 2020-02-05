@@ -14,8 +14,14 @@
 Route::get('/home', "Frontend\\TicketsController@index")
     ->name("home");
 
+Route::get('/', "Frontend\\TicketsController@index")
+    ->name("frontend.index");
+
 Route::get('/admin/home', "Backend\\DashboardController@index")
     ->name("admin.home");
+
+Route::get('/admin', "Backend\\TicketsController@index")
+    ->name("backend.index");
 
 Auth::routes(
     [

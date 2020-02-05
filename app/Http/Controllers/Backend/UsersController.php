@@ -20,7 +20,6 @@ use App\Http\Requests\UserUpdateRequest;
 use App\User;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 /**
@@ -89,7 +88,7 @@ class UsersController extends Controller
 
         return redirect()
             ->route("admin.user.list")
-            ->with("success", "auth.User created successfully.");
+            ->with("success", __("auth.User created successfully."));
     }
 
     /**
@@ -146,12 +145,25 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param User $user
+     * @param User $user The target user
      *
-     * @return Response
+     * @return RedirectResponse
+     * @throws \Exception
      */
     public function destroy(User $user)
     {
-        //
+        $redirect = redirect()->route("admin.user.list");
+        if ($user->delete()) {
+            return $redirect->with(
+                "success",
+                __("auth.User successfully deleted.")
+            );
+        } else {
+            return $redirect->with(
+                "error",
+                __("common.There are some problems on deleting data.")
+            );
+        }
+
     }
 }
