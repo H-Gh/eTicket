@@ -60,8 +60,14 @@ Route::name("admin.user.")
                 ->name("create");
             Route::post("store", "Backend\UsersController@store")
                 ->name("store");
-            Route::get("show/{ticket}", "Backend\UsersController@show")
+            Route::get("edit/{user}", "Backend\UsersController@edit")
+                ->name("edit");
+            Route::post("update/{user}", "Backend\UsersController@update")
+                ->name("update");
+            Route::get("show/{user}", "Backend\UsersController@show")
                 ->name("show");
+            Route::post("destroy/{user}", "Backend\UsersController@destroy")
+                ->name("destroy");
         }
     );
 

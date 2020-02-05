@@ -60,7 +60,7 @@
             </tr>
         @empty
             <tr>
-                <td>{{ __("ticket.There is no ticket yet.") }}</td>
+                <td>{{ __("common.There is no data yet.") }}</td>
             </tr>
         @endforelse
         </tbody>

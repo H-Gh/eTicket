@@ -53,3 +53,12 @@ Breadcrumbs::for(
         );
     }
 );
+
+Breadcrumbs::for(
+    "admin.user.list",
+    function ($trail) {
+        $trail->push(
+            __("auth.Users list")
+        );
+    }
+);

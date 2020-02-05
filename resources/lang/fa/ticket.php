@@ -10,7 +10,6 @@ return [
     "Reject ticket" => "رد درخواست",
     "Ticket #:number" => "درخواست شماره :number",
     "Edit ticket #:number" => "ویرایش درخواست شماره :number",
-    "There is no ticket yet." => "هنوز درخواستی وجود ندارد.",
     "Your ticket saved successfully and will be reviewed as soon as possible." =>
         "درخواست شما با موفقیت ثبت شد و در اسرع وقت به آن رسیدگی خواهد شد.",
     "pending" => "در دست بررسی",

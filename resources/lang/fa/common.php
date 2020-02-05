@@ -19,4 +19,6 @@ return [
     "There are some problems on deleting data." =>
         "مشکلاتی برای حذف داده وجود دارد.",
     "Not set" => "تعیین نشده",
+    "There is no data yet." => "هنوز داده ای موجود نیست",
+    "Updated at" => "تاریخ به روز رسانی",
 ];
