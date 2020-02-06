@@ -10,15 +10,6 @@
                 @include("backend.side-column-item",
                     [
                         "sidebarItem" => (new \App\Services\SidebarItem())
-                            ->setIcon("fas fa-tachometer-alt")
-                            ->setText(__("common.Dashboard"))
-                            ->setRouteName("admin.home")
-                            ->addPermissions(["ticket.remove", "ticket.edit", "ticket.answer", "ticket.assign", "user.add", "user.edit", "user.remove", "user.permission.assign"])
-                    ]
-                )
-                @include("backend.side-column-item",
-                    [
-                        "sidebarItem" => (new \App\Services\SidebarItem())
                             ->setIcon("fas fa-comment-alt")
                             ->setText(__("ticket.Tickets"))
                             ->setRouteName("admin.ticket.list")

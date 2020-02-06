@@ -58,7 +58,6 @@
 ["index" => "ticket.edit.content", "name" => __("ticket.Edit ticket's content"), "description" => __("ticket.User can edit the title and content an existing ticket of system."), "danger" => __("ticket.User can change others' tickets title or text.")],
 ["index" => "ticket.remove", "name" => __("ticket.Delete ticket"), "description" => __("ticket.User can delete an existing ticket of system.")],
 ["index" => "ticket.answer", "name" => __("ticket.Answer ticket"), "description" => __("ticket.User can answer an existing ticket of system.")],
-["index" => "ticket.assign", "name" => __("ticket.Assign answerer"), "description" => __("ticket.User can assign another user to answer an existing ticket of system.")],
 ]
 ]
 )

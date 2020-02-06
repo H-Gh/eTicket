@@ -17,7 +17,7 @@ Route::get('/home', "Frontend\\TicketsController@index")
 Route::get('/', "Frontend\\TicketsController@index")
     ->name("frontend.index");
 
-Route::get('/admin/home', "Backend\\DashboardController@index")
+Route::get('/admin/home', "Backend\\TicketsController@index")
     ->name("admin.home");
 
 Route::get('/admin', "Backend\\TicketsController@index")
@@ -38,6 +38,54 @@ Route::name("profile.")
                 ->name("edit");
             Route::post("{user}", "Auth\ProfileController@update")
                 ->name("update");
+        }
+    );
+
+Route::name("notification.")
+    ->prefix("/notifications")
+    ->group(
+        function () {
+            Route::get("", "Frontend\\NotificationsController@index")
+                ->name("list");
+            Route::get(
+                "show/{notification}",
+                "Frontend\\NotificationsController@show"
+            )
+                ->name("show");
+            Route::get(
+                "read/{notification}",
+                "Frontend\\NotificationsController@read"
+            )
+                ->name("read");
+            Route::get(
+                "unread/{notification}",
+                "Frontend\\NotificationsController@unread"
+            )
+                ->name("unread");
+        }
+    );
+
+Route::name("admin.notification.")
+    ->prefix("/admin/notifications")
+    ->group(
+        function () {
+            Route::get("", "Backend\\NotificationsController@index")
+                ->name("list");
+            Route::get(
+                "show/{notification}",
+                "Backend\\NotificationsController@show"
+            )
+                ->name("show");
+            Route::get(
+                "read/{notification}",
+                "Backend\\NotificationsController@read"
+            )
+                ->name("read");
+            Route::get(
+                "unread/{notification}",
+                "Backend\\NotificationsController@unread"
+            )
+                ->name("unread");
         }
     );
 

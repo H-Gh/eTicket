@@ -15,6 +15,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Facades\UserManager;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\CheckAdminPrivilage;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\User;
@@ -39,6 +40,7 @@ class UsersController extends Controller
     public function __construct()
     {
         $this->middleware("auth");
+        $this->middleware(CheckAdminPrivilage::class);
         $this->middleware(
             ["role_or_permission:user.admin|user.add"]
         )->only(["create", "store"]);

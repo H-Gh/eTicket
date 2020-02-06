@@ -41,7 +41,6 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'user.add']);
         Permission::create(['name' => 'user.edit']);
         Permission::create(['name' => 'user.remove']);
-        Permission::create(['name' => 'user.permission.assign']);
 
         // Users admin role
         $userAdminRole = Role::create(["name" => "user.admin"]);

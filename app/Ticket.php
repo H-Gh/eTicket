@@ -103,4 +103,14 @@ class Ticket extends Model
     {
         return $this->belongsTo(User::class, 'answered_by', 'id');
     }
+
+    /**
+     * Check what if a ticket has answered_at property or not
+     *
+     * @return bool
+     */
+    public function alreadyAnswered(): bool
+    {
+        return !empty($this->answered_at);
+    }
 }
