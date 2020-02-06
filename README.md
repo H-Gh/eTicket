@@ -4,7 +4,7 @@ A simple project on Laravel
 
 ## Installation
 ```git
-https://github.com/eFormula/eTicket.git 
+git clone git@github.com:H-Gh/eTicket.git
 ```
 
 ```shell script
