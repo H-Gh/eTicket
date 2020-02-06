@@ -7,11 +7,13 @@
             @auth
                 <div class="welcome">
                     <ul>
-                        <li>
-                            <a href="{{ route("admin.home") }}">
-                                <i class="fas fa-hammer"></i>
-                            </a>
-                        </li>
+                        @if(\App\Facades\PermissionManager::hasAnyAdminPermissions())
+                            <li>
+                                <a href="{{ route("admin.home") }}">
+                                    <i class="fas fa-hammer"></i>
+                                </a>
+                            </li>
+                        @endif
                         <li class="user-notification-container">
                             <a href="{{ route("notification.list") }}">
                                 <i class="fas fa-bell"></i>
