@@ -23,18 +23,15 @@
                 @cannot("ticket.edit.content")
                 disabled
                             @endcannot
-                    >
-                        {{ old("text", isset($ticket) ? $ticket->text : "") }}
-                    </textarea>
+                    >{{ old("text", isset($ticket) ? $ticket->text : "") }}</textarea>
         @error("text")
         <span class="text danger">{{ $message }}</span>
         @enderror
     </div>
     <div class="form-group">
         <label for="ticket-answer">{{ __("ticket.Answer") }}</label>
-        <textarea name="answer" id="ticket-answer" rows="5">
-                        {{ old("answer", isset($ticket) ? $ticket->answer : "") }}
-                    </textarea>
+        <textarea name="answer" id="ticket-answer" rows="5"
+        >{{ old("answer", isset($ticket) ? $ticket->answer : "") }}</textarea>
         @error("answer")
         <span class="text danger">{{ $message }}</span>
         @enderror

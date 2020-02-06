@@ -14,6 +14,8 @@
 
 namespace App\Services;
 
+use App\Events\TicketAnswered;
+use App\Events\TicketUpdated;
 use App\Ticket;
 use Auth;
 use Illuminate\Http\Request;
@@ -57,6 +59,12 @@ class TicketManagerService
     {
         $ticket->fill($request->all());
         if ($this->isAnswered($request)) {
+            if ($ticket->alreadyAnswered()) {
+                event(new TicketUpdated($ticket));
+            } else {
+                event(new TicketAnswered($ticket));
+            }
+
             return $ticket->answered($request->get("answer"));
         } else {
             return $ticket->save();

@@ -7,7 +7,7 @@ use App\Ticket;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 
-class NewTicketPublished extends Notification
+class TicketAnswered extends Notification
 {
     use Queueable;
 
@@ -60,7 +60,7 @@ class NewTicketPublished extends Notification
      */
     public static function formatType(): string
     {
-        return __("ticket.New ticket published.");
+        return __("ticket.Your ticket was answered.");
     }
 
     /**
@@ -75,13 +75,13 @@ class NewTicketPublished extends Notification
         $ticket = Ticket::findOrFail($ticketId);
         return (new MessageFormatter())
             ->setRoute(self::getRoute())
-            ->setHeader(__("ticket.New ticket published."))
+            ->setHeader(__("ticket.Your ticket was answered."))
             ->setBody(
                 __(
-                    "ticket.new_ticket_published",
+                    "ticket.ticket_answered",
                     [
-                        "username" => $ticket->createdBy->name,
-                        "userId" => $ticket->created_by
+                        "id" => $ticket->id,
+                        "answeredBy" => $ticket->answeredBy->name
                     ]
                 )
             )

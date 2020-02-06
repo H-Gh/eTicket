@@ -50,12 +50,15 @@ TAG,
     "Answer" => "پاسخ",
     "The ticket updated successfully." => "درخواست با موفقیت به روز شد.",
     "New ticket published." => "درخواست جدید منتشر شد.",
-    <<<TAG
-A new ticket by \":username(:userId)\" is published recently. Please answer it or assign it to another users.
-TAG
-    =>
+    "new_ticket_published" =>
         <<<TAG
 درخواست جدیدی اخیراً توسط ":username(:userId)" ایجاد شده است.
  لطفاً به درخواست پاسخ دهید یا آن را به فردی دیگری واگذار کنید
 TAG
+    ,
+    "Your ticket was answered." => "به درخواست شما پاسخ داده شد.",
+    "ticket_answered" =>
+        "درخواست شما به شماره :id توسط :answeredBy پاسخ داده شد.",
+    "You ticket's status was updated." => "وضعیت درخواست شما به روز شد.",
+    "ticket_updated" => "وقعیت درخواست شما به شماره :id به روز شد. لطفاً بررسی کنید."
 ];
