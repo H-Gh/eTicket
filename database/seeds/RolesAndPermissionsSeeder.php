@@ -41,6 +41,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'user.add']);
         Permission::create(['name' => 'user.edit']);
         Permission::create(['name' => 'user.remove']);
+        Permission::create(['name' => 'user.permission.assign']);
 
         // Users admin role
         $userAdminRole = Role::create(["name" => "user.admin"]);
@@ -54,7 +55,6 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'ticket.edit.content']);
         Permission::create(['name' => 'ticket.remove']);
         Permission::create(['name' => 'ticket.answer']);
-        Permission::create(['name' => 'ticket.assign']);
 
 
         // Tickets admin role
