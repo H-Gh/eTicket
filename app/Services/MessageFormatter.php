@@ -51,6 +51,17 @@ class MessageFormatter
      * @var array
      */
     private $parameters;
+    /**
+     * The text of button
+     *
+     * @var string
+     */
+    private $buttonText;
+
+    public function __construct()
+    {
+        $this->buttonText = __("common.Check it");
+    }
 
     /**
      * This method will fill header property
@@ -124,6 +135,20 @@ class MessageFormatter
     }
 
     /**
+     * Set buttonText property
+     *
+     * @param string $buttonText The text of button
+     *
+     * @return MessageFormatter
+     */
+    public function setButtonText(string $buttonText)
+    {
+        $this->buttonText = $buttonText;
+
+        return $this;
+    }
+
+    /**
      * This method will return a formatted message
      *
      * @return string
@@ -131,14 +156,14 @@ class MessageFormatter
     public function getMessage(): string
     {
         return
-            "<h1>" . $this->header . "</h1><br>"
+            "<h3>" . $this->header . "</h3><br>"
             . $this->body
             . "<br><br>"
             . "<div class='text-center action-buttons-container'>"
             . "<a class='button primary' href='"
             . route($this->route, $this->parameters)
             . "'>"
-            . __("common.Check it")
+            . $this->buttonText
             . "</a>"
             . "</div>";
     }

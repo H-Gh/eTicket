@@ -106,3 +106,30 @@ Breadcrumbs::for(
         );
     }
 );
+
+Breadcrumbs::for(
+    "admin.notification.list",
+    function ($trail) {
+        $trail->parent("admin.home");
+        $trail->push(
+            __("notification.Notifications"),
+            route("admin.notification.list")
+        );
+    }
+);
+
+Breadcrumbs::for(
+    "admin.notification.show",
+    function ($trail, $notification) {
+        $trail->parent("admin.notification.list");
+        $trail->push(
+            __("notification.Display notification"),
+            route(
+                "admin.notification.show",
+                [
+                    "notification" => $notification
+                ]
+            )
+        );
+    }
+);

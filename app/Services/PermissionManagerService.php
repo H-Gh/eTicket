@@ -25,6 +25,7 @@ namespace App\Services;
  */
 class PermissionManagerService
 {
+
     /**
      * This method get the permission name and return the description
      *
@@ -133,5 +134,28 @@ class PermissionManagerService
         }
 
         return __($name->getCategory() . "." . $name->getName());
+    }
+
+    /**
+     * Check what if a user can see admin area or not
+     *
+     * @return bool
+     */
+    public function hasAnyAdminPermissions(): bool
+    {
+        return \Auth::user()->canany(
+            [
+                "user.add",
+                "user.edit",
+                "user.remove",
+                "user.permission.assign",
+                "ticket.add",
+                "ticket.edit",
+                "ticket.edit.content",
+                "ticket.remove",
+                "ticket.answer",
+                "ticket.assign",
+            ]
+        );
     }
 }

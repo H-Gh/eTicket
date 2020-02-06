@@ -3,8 +3,15 @@
         <div class="content">
             <div class="welcome">
                 <ul>
-                    <li>
-                        <i class="fas fa-bell"></i>
+                    <li class="user-notification-container">
+                        <a href="{{ route("admin.notification.list") }}">
+                            <i class="fas fa-bell"></i>
+                            @if(Auth::user()->unreadNotifications->count() > 0)
+                                <span class="notification-counter-container">
+                                    {{ Auth::user()->unreadNotifications->count() }}
+                                </span>
+                            @endif
+                        </a>
                     </li>
                     <li>
                         <a href="{{ route("profile.edit", ["user" => Auth::user()->getAuthIdentifier()] ) }}">

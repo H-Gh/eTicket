@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Facade;
  * @link     null
  * @method   static string getName(string $roleOrPermission)
  * @method   static string getTranslatedName(string $roleOrPermission)
+ * @method   static bool hasAnyAdminPermissions()
  */
 class PermissionManager extends Facade
 {

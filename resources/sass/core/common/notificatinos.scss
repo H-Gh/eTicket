@@ -4,14 +4,14 @@
   margin: 30px 30px 0;
 }
 
-.page .user-notification-container {
+.page .user-notification-container a {
   position: relative;
 }
 
 .page .user-notification-container .notification-counter-container {
 
   position: absolute;
-  top: -3px;
+  top: -10px;
   background: $danger;
   display: block;
   width: 15px;
@@ -22,12 +22,16 @@
   color: white;
 }
 
+.page .main-column .top-bar .icons .notification-counter-container {
+  line-height: initial;
+}
+
 .page.rtl .user-notification-container .notification-counter-container {
-  right: 0;
+  right: -5px;
 }
 
 .page.ltr .user-notification-container .notification-counter-container {
-  left: 0;
+  left: -5px;
 }
 
 .page .notifications-list a.read {

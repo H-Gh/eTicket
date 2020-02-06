@@ -48,5 +48,14 @@ TAG,
     "Answered at" => "تاریخ پاسخگویی",
     "Answered by" => "کاربر پاسخگو",
     "Answer" => "پاسخ",
-    "The ticket updated successfully" => "درخواست با موفیت به روز شد.",
+    "The ticket updated successfully." => "درخواست با موفقیت به روز شد.",
+    "New ticket published." => "درخواست جدید منتشر شد.",
+    <<<TAG
+A new ticket by \":username(:userId)\" is published recently. Please answer it or assign it to another users.
+TAG
+    =>
+        <<<TAG
+درخواست جدیدی اخیراً توسط ":username(:userId)" ایجاد شده است.
+ لطفاً به درخواست پاسخ دهید یا آن را به فردی دیگری واگذار کنید
+TAG
 ];

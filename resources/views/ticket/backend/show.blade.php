@@ -6,13 +6,13 @@
         @include("notifications")
         <div class="main-content">
             <div class="action-buttons-container">
-                @can("ticket.answer")
-                    <a class="button primary" href="{{ route("admin.ticket.answer", ["ticket" => $ticket->id]) }}">
-                        {{ __("ticket.Answer ticket") }}
+                @can("ticket.edit")
+                    <a class="button primary" href="{{ route("admin.ticket.edit", ["ticket" => $ticket->id]) }}">
+                        {{ __("ticket.Edit ticket") }}
                     </a>
                 @endcan
                 @can("ticket.remove")
-                    <a class="button danger" href="{{ route("admin.ticket.remove", ["ticket" => $ticket->id]) }}">
+                    <a class="button danger" href="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}">
                         {{ __("ticket.Remove ticket") }}
                     </a>
                 @endcan

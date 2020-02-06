@@ -5,7 +5,7 @@
             <tr>
                 <td>
                     <a @if(!empty($notification->read_at)) class="read"
-                       @endif href="{{ route("notification.show", ["notification" => $notification->id]) }}">
+                       @endif href="{{ route(isset($customRoute) ? $customRoute : "notification.show" , ["notification" => $notification->id]) }}">
                         {{ ($notification->type)::formatType() }}
                     </a>
                     <div class="icons">
