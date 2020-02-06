@@ -43,7 +43,7 @@
                     </tr>
                     <tr>
                         <td>{{ __("ticket.Answered by") }}</td>
-                        <td>{{ $ticket->answered_by }}</td>
+                        <td>{{ $ticket->answeredBy->name }}</td>
                     </tr>
                 @endif
             </table>

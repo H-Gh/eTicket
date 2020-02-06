@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
  * @mixin    Eloquent
+ * @property int    id
  * @property string title
  * @property string text
  * @property string answer

@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Facade;
  * @author   Hamed Ghasempour <hamedghasempour@gmail.com>
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     null
- * @method   static bool create(Request $request)
+ * @method   static Ticket create(Request $request)
  * @method   static bool update(Request $request, Ticket $ticket)
  * @method   static bool isAnswered(Request $request)
  */

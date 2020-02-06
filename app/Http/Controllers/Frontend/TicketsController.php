@@ -13,10 +13,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Events\NewTicketPublished;
 use App\Facades\TicketManager;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TicketStoreRequest;
 use App\Ticket;
+use App\User;
 use Auth;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -82,8 +84,8 @@ class TicketsController extends Controller
     public function store(TicketStoreRequest $request)
     {
         $request->validated();
-        TicketManager::create($request);
-
+        $ticket = TicketManager::create($request);
+        event(new NewTicketPublished($ticket));
         return redirect()
             ->route("ticket.list")
             ->with(
