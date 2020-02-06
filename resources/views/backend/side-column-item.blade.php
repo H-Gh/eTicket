@@ -23,7 +23,8 @@
                 @foreach($sidebarItem->getChildren() as $child)
                     @canany($child->getPermissions())
                         <a href="{{ route($child->getRouteName()) }}"
-                           @if($sidebarItem->ownRoute()) class="active" @endif>
+                           @if($child->ownRoute()) class="active" @endif
+                        >
                             <div class="icon">
                                 <i class="{{ $child->getIcon() }}"></i>
                             </div>

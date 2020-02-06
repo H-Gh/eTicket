@@ -17,7 +17,7 @@ Route::get('/home', "Frontend\\TicketsController@index")
 Route::get('/', "Frontend\\TicketsController@index")
     ->name("frontend.index");
 
-Route::get('/admin/home', "Backend\\DashboardController@index")
+Route::get('/admin/home', "Backend\\TicketsController@index")
     ->name("admin.home");
 
 Route::get('/admin', "Backend\\TicketsController@index")

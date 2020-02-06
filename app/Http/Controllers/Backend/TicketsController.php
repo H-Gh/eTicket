@@ -15,6 +15,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Facades\TicketManager;
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\CheckAdminPrivilage;
 use App\Http\Requests\TicketUpdateRequest;
 use App\Ticket;
 use App\User;
@@ -41,6 +42,7 @@ class TicketsController extends Controller
     public function __construct()
     {
         $this->middleware("auth");
+        $this->middleware(CheckAdminPrivilage::class);
         $this->middleware(
             ["role_or_permission:ticket.admin|ticket.add"]
         )->only(["create", "store"]);
@@ -62,7 +64,7 @@ class TicketsController extends Controller
         return view(
             "ticket.backend.list",
             [
-                "tickets" => Ticket::orderBy("created_at")
+                "tickets" => Ticket::orderBy("created_at", "desc")
                     ->paginate(config("eTicket.pagination_count"))
             ]
         );

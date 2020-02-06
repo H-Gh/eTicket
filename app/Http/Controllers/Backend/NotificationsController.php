@@ -14,6 +14,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\CheckAdminPrivilage;
 use Auth;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
@@ -37,6 +38,7 @@ class NotificationsController extends Controller
     public function __construct()
     {
         $this->middleware("auth");
+        $this->middleware(CheckAdminPrivilage::class);
     }
 
     /**

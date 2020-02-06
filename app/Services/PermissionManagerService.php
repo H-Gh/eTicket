@@ -143,13 +143,12 @@ class PermissionManagerService
      */
     public function hasAnyAdminPermissions(): bool
     {
-        return \Auth::user()->canany(
+        return \Auth::user()->hasAnyPermission(
             [
                 "user.add",
                 "user.edit",
                 "user.remove",
                 "user.permission.assign",
-                "ticket.add",
                 "ticket.edit",
                 "ticket.edit.content",
                 "ticket.remove",
