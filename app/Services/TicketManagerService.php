@@ -34,13 +34,15 @@ class TicketManagerService
      *
      * @param Request $request The Incoming request to update ticket
      *
-     * @return bool
+     * @return Ticket
      */
-    public function create(Request $request): bool
+    public function create(Request $request): Ticket
     {
         $ticket = new Ticket($request->all());
         $ticket->created_by = Auth::user()->getAuthIdentifier();
-        return $ticket->save();
+        $ticket->save();
+
+        return $ticket;
     }
 
     /**

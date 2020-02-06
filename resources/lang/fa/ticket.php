@@ -48,4 +48,5 @@ TAG,
     "Answered at" => "تاریخ پاسخگویی",
     "Answered by" => "کاربر پاسخگو",
     "Answer" => "پاسخ",
+    "The ticket updated successfully" => "درخواست با موفیت به روز شد.",
 ];
