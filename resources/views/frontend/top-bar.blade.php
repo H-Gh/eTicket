@@ -7,6 +7,11 @@
             @auth
                 <div class="welcome">
                     <ul>
+                        <li>
+                            <a href="{{ route("admin.home") }}">
+                                <i class="fas fa-hammer"></i>
+                            </a>
+                        </li>
                         <li class="user-notification-container">
                             <a href="{{ route("notification.list") }}">
                                 <i class="fas fa-bell"></i>
@@ -19,7 +24,7 @@
                         </li>
                         <li>
                             <a href="{{ route("profile.edit", ["user" => Auth::user()->getAuthIdentifier()] ) }}">
-                                <i class="fas fa-user"></i>
+                                <i class="fas fa-user-cog"></i>
                             </a>
                         </li>
                         <li>
