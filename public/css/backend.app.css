@@ -16277,6 +16277,47 @@ a.text.dark:hover {
   margin: 30px 30px 0;
 }
 
+.page .user-notification-container {
+  position: relative;
+}
+
+.page .user-notification-container .notification-counter-container {
+  position: absolute;
+  top: -3px;
+  background: #ff8788;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  color: white;
+}
+
+.page.rtl .user-notification-container .notification-counter-container {
+  right: 0;
+}
+
+.page.ltr .user-notification-container .notification-counter-container {
+  left: 0;
+}
+
+.page .notifications-list a.read {
+  color: #9a9a9a;
+}
+
+.page.rtl .notifications-list .icons i {
+  font-size: 15px;
+}
+
+.page.rtl .notifications-list .icons {
+  float: left;
+}
+
+.page.ltr .notifications-list .icons {
+  float: right;
+}
+
 .page .side-column .side-bar,
 .page .main-column .top-bar .navigation {
   background: #fff;
@@ -16455,6 +16496,51 @@ ul {
 
 .page.rtl .page-item:last-child .page-link {
   border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.notification-container {
+  margin: 30px 30px 0;
+}
+
+.page .user-notification-container {
+  position: relative;
+}
+
+.page .user-notification-container .notification-counter-container {
+  position: absolute;
+  top: -3px;
+  background: #ff8788;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  color: white;
+}
+
+.page.rtl .user-notification-container .notification-counter-container {
+  right: 0;
+}
+
+.page.ltr .user-notification-container .notification-counter-container {
+  left: 0;
+}
+
+.page .notifications-list a.read {
+  color: #9a9a9a;
+}
+
+.page.rtl .notifications-list .icons i {
+  font-size: 15px;
+}
+
+.page.rtl .notifications-list .icons {
+  float: left;
+}
+
+.page.ltr .notifications-list .icons {
+  float: right;
 }
 
 .breadcrumbs-list {

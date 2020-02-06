@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Services\MessageFormatter;
 use App\Ticket;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
@@ -56,5 +57,38 @@ class NewTicketPublished extends Notification
 A new ticket has been released. Please answer it or assign it to someone.
 TAG
         ];
+    }
+
+    /**
+     * This method will format the name of class
+     *
+     * @return string
+     */
+    public static function formatType(): string
+    {
+        return __("notification.New ticket published.");
+    }
+
+    /**
+     * This method will return formatted message of notification
+     *
+     * @param int $ticketId The target Ticket ID
+     *
+     * @return string
+     */
+    public static function formatText(int $ticketId): string
+    {
+        return (new MessageFormatter())
+            ->setRoute("ticket.show")
+            ->setHeader(__("notification.New ticket published."))
+            ->setBody(
+                __(
+                    <<<TAG
+notification.A new ticket is published recently. Please answer it or assign it to another users.
+TAG
+                )
+            )
+            ->addParameter("ticket", $ticketId)
+            ->getMessage();
     }
 }

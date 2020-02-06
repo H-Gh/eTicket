@@ -1,0 +1,1 @@
+{!! ($notification->type)::formatText($notification->data["id"]) !!}

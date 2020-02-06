@@ -41,6 +41,30 @@ Route::name("profile.")
         }
     );
 
+Route::name("notification.")
+    ->prefix("/notifications")
+    ->group(
+        function () {
+            Route::get("", "Frontend\\NotificationsController@index")
+                ->name("list");
+            Route::get(
+                "show/{notification}",
+                "Frontend\\NotificationsController@show"
+            )
+                ->name("show");
+            Route::get(
+                "read/{notification}",
+                "Frontend\\NotificationsController@read"
+            )
+                ->name("read");
+            Route::get(
+                "unread/{notification}",
+                "Frontend\\NotificationsController@unread"
+            )
+                ->name("unread");
+        }
+    );
+
 Route::name("ticket.")
     ->prefix("/ticket")
     ->group(
