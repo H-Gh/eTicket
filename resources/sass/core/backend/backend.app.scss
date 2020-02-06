@@ -1,0 +1,31 @@
+// Backend variables
+@import "backend.variables";
+
+@import "../common/common.app";
+@import "breadcrump";
+@import "side-column";
+
+.page {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
+.page .main-column {
+  width: calc(100% - 210px);
+}
+
+.page .main-column .top-bar {
+  border-right: 0;
+  width: 100%;
+  height: 95px;
+}
+
+.page .main-column .top-bar.fixed .navigation {
+  position: fixed;
+  width: calc(100% - 210px);
+  top: 32px;
+  transform: translateY(-32px);
+  z-index: 1;
+}

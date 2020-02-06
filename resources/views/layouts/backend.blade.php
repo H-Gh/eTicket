@@ -17,15 +17,15 @@
 </head>
 @inject('direction', 'App\Services\DirectionService')
 <body class="page {{ $direction->isRtl() ? "rtl" : "ltr" }}">
-@yield("navbar")
-<main class="content">
-    @yield('content')
-</main>
+@include("backend.side-column")
+@yield('content')
 
 <!-- Scripts -->
 <script src="{{ asset('components/jquery/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('components/inputs/plugin.js') }}"></script>
 <script src="{{ asset('components/inputs/setup.js') }}"></script>
+<script src="{{ asset('js/side-bar.js') }}"></script>
+<script src="{{ asset('js/top-bar.js') }}"></script>
 @yield("js")
 </body>
 </html>

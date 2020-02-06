@@ -1,0 +1,26 @@
+@media (min-width: 991px) {
+  .page.rtl .main-column .main-content .ticket-info {
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .page.ltr .main-column .main-content .ticket-info {
+    border-left: 1px solid #e7e7e7;
+  }
+}
+
+.page .main-column .main-content .ticket-title-and-text .title {
+  border-bottom: none;
+}
+
+.page .main-column .main-content table {
+  width: 100%;
+}
+
+.page .main-column .main-content table tr td {
+  padding: 10px;
+}
+
+.page .main-column .main-content .ticket-info .answer {
+  border-top: 1px solid #e7e7e7;
+}
+

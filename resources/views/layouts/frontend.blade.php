@@ -17,13 +17,11 @@
 </head>
 @inject('direction', 'App\Services\DirectionService')
 <body class="page {{ $direction->isRtl() ? "rtl" : "ltr" }}">
-<main class="content">
-    @yield('content')
-</main>
+@yield('content')
 
 <!-- Scripts -->
-<script src="{{ asset('js/frontend.app.js') }}" defer></script>
-{{--<script src="{{ asset('components/jquery/jquery-3.4.1.min.js') }}"></script>--}}
+{{--<script src="{{ asset('js/frontend.app.js') }}" defer></script>--}}
+<script src="{{ asset('components/jquery/jquery-3.4.1.min.js') }}"></script>
 <script src="{{ asset('components/inputs/plugin.js') }}"></script>
 <script src="{{ asset('components/inputs/setup.js') }}"></script>
 @yield("js")

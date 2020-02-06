@@ -1,0 +1,20 @@
+.breadcrumbs-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs-list li {
+  font-size: 10px;
+}
+
+.page .breadcrumb-item + .breadcrumb-item {
+  padding: 0;
+}
+
+.page .breadcrumb-item + .breadcrumb-item::before {
+  margin: 0 5px;
+  padding: 0;
+}

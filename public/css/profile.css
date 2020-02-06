@@ -1,0 +1,46 @@
+.page .section {
+  padding: 10px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+@media (min-width: 991px) {
+  .page.rtl .roles-permissions-container {
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .page.ltr .roles-permissions-container {
+    border-left: 1px solid #e7e7e7;
+  }
+}
+
+.page .role-permissions-container .description {
+  color: #9a9a9a;
+  font-size: 11px;
+}
+
+.page .role-permissions-container .text {
+  font-size: 10px;
+}
+
+.page .role-permissions-container .description,
+.page .role-permissions-container .text {
+  font-style: italic;
+}
+
+.page .role-permissions-container ul.permissions {
+  list-style: none;
+}
+
+.page.rtl .role-permissions-container ul.permissions,
+.page.rtl .role-permissions-container .description,
+.page.rtl .role-permissions-container .text {
+  margin-right: 25px;
+}
+
+.page.ltr .role-permissions-container ul.permissions,
+.page.ltr .role-permissions-container .description,
+.page.ltr .role-permissions-container .text {
+  margin-left: 25px;
+}
+

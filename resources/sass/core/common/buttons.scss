@@ -1,0 +1,209 @@
+@import "common.variables";
+
+.button {
+  border-radius: 5px;
+  border: 1px solid;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-block;
+  height: auto;
+}
+
+.button i {
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+}
+
+a.button,
+a:hover.button {
+  color: #fff;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button.big {
+  padding: 20px 40px;
+  font-size: 15px;
+}
+
+.button.small {
+  padding: 7px 14px;
+  font-size: 10px;
+}
+
+.button.extra-small {
+  padding: 3px 7px;
+  font-size: 8px;
+}
+
+.auth-form-container .button {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+.button.basic,
+.button.primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.button.basic:hover,
+.button.primary:hover {
+  background-color: $dark-primary;
+  border-color: $dark-primary;
+}
+
+.button.stroke.basic,
+.button.stroke.primary {
+  border-color: $primary;
+  color: $primary;
+}
+
+.button.stroke.basic,
+.button.stroke.primary {
+  border-color: $dark-primary;
+  color: $dark-primary;
+}
+
+.button.secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+}
+
+.button.secondary:hover {
+  background-color: $dark-secondary;
+  border-color: $dark-secondary;
+}
+
+.button.notification {
+  background-color: $notification;
+  border-color: $notification;
+}
+
+.button.notification:hover {
+  background-color: $dark-notification;
+  border-color: $dark-notification;
+}
+
+.button.success {
+  background-color: $success;
+  border-color: $success;
+}
+
+.button.success:hover {
+  background-color: $dark-success;
+  border-color: $dark-success;
+}
+
+.button.warn {
+  background-color: $warn;
+  border-color: $warn;
+}
+
+.button.warn:hover {
+  background-color: $dark-warn;
+  border-color: $dark-warn;
+}
+
+.button.danger {
+  background-color: $danger;
+  border-color: $danger;
+}
+
+.button.danger:hover {
+  background-color: $dark-danger;
+  border-color: $dark-danger;
+}
+
+.button.dark {
+  background-color: $dark;
+  border-color: $dark;
+}
+
+.button.dark:hover {
+  background-color: $dark-dark;
+  border-color: $dark-dark;
+}
+
+.button.rounded {
+  border-radius: 50%;
+}
+
+.button.rectangle {
+  border-radius: 0;
+}
+
+.button.stroke {
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.button.secondary.stroke {
+  border-color: $secondary;
+  color: $secondary;
+}
+
+.button.secondary.stroke:hover {
+  border-color: $dark-secondary;
+  color: $dark-secondary;
+}
+
+.button.notification.stroke {
+  border-color: $notification;
+  color: $notification;
+}
+
+.button.notification.stroke:hover {
+  border-color: $dark-notification;
+  color: $dark-notification;
+}
+
+.button.success.stroke {
+  border-color: $success;
+  color: $success;
+}
+
+.button.success.stroke:hover {
+  border-color: $dark-success;
+  color: $dark-success;
+}
+
+.button.warn.stroke {
+  border-color: $warn;
+  color: $warn;
+}
+
+.button.warn.stroke:hover {
+  border-color: $dark-warn;
+  color: $dark-warn;
+}
+
+.button.danger.stroke {
+  border-color: $danger;
+  color: $danger;
+}
+
+.button.danger.stroke:hover {
+  border-color: $dark-danger;
+  color: $dark-danger;
+}
+
+.button.dark.stroke {
+  border-color: $dark;
+  color: $dark;
+}
+
+.button.dark.stroke:hover {
+  border-color: $dark-dark;
+  color: $dark-dark;
+}
+
+.button.no-border {
+  border: none;
+}
