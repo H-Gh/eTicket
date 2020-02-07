@@ -4,6 +4,5 @@
     "/css/frontend.app.css": "/css/frontend.app.css",
     "/css/backend.app.css": "/css/backend.app.css",
     "/css/profile/profile.css": "/css/profile/profile.css",
-    "/css/ticket/backend/style.css": "/css/ticket/backend/style.css",
-    "/css/ticket/common/style.css": "/css/ticket/common/style.css"
+    "/css/ticket/ticket.css": "/css/ticket/ticket.css"
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main controller to handle administration of users
  * PHP version 7.4
@@ -19,6 +20,7 @@ use App\Http\Middleware\CheckAdminPrivilage;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\User;
+use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -41,15 +43,12 @@ class UsersController extends Controller
     {
         $this->middleware("auth");
         $this->middleware(CheckAdminPrivilage::class);
-        $this->middleware(
-            ["role_or_permission:user.admin|user.add"]
-        )->only(["create", "store"]);
-        $this->middleware(
-            ["role_or_permission:user.admin|user.edit"]
-        )->only(["edit", "update"]);
-        $this->middleware(
-            ["role_or_permission:user.admin|user.remove"]
-        )->only("destroy");
+        $this->middleware(["role_or_permission:user.admin|user.add"])
+            ->only(["create", "store"]);
+        $this->middleware(["role_or_permission:user.admin|user.edit"])
+            ->only(["edit", "update"]);
+        $this->middleware(["role_or_permission:user.admin|user.remove"])
+            ->only("destroy");
     }
 
     /**
@@ -87,9 +86,8 @@ class UsersController extends Controller
         $user = User::create($requestAllItems);
         UserManager::updateRoles($user, request("roles"));
         UserManager::updatePermissions($user, request("permissions"));
-
         return redirect()
-            ->route("admin.user.list")
+            ->route("admin.user.index")
             ->with("success", __("auth.User created successfully."));
     }
 
@@ -117,9 +115,7 @@ class UsersController extends Controller
     {
         return \view(
             "auth.backend.edit",
-            [
-                "user" => $user
-            ]
+            ["user" => $user]
         );
     }
 
@@ -138,7 +134,6 @@ class UsersController extends Controller
         $user->update($allRequestItems);
         UserManager::updateRoles($user, request("roles"));
         UserManager::updatePermissions($user, request("permissions"));
-
         return redirect()
             ->back()
             ->with("success", __("auth.User updated successfully."));
@@ -150,11 +145,11 @@ class UsersController extends Controller
      * @param User $user The target user
      *
      * @return RedirectResponse
-     * @throws \Exception
+     * @throws Exception
      */
     public function destroy(User $user)
     {
-        $redirect = redirect()->route("admin.user.list");
+        $redirect = redirect()->route("admin.user.index");
         if ($user->delete()) {
             return $redirect->with(
                 "success",
@@ -166,6 +161,5 @@ class UsersController extends Controller
                 __("common.There are some problems on deleting data.")
             );
         }
-
     }
 }
