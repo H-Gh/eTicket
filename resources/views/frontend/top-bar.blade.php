@@ -15,7 +15,7 @@
                             </li>
                         @endif
                         <li class="user-notification-container">
-                            <a href="{{ route("notification.list") }}">
+                            <a href="{{ route("notification.index") }}">
                                 <i class="fas fa-bell"></i>
                                 @if(Auth::user()->unreadNotifications->count() > 0)
                                     <span class="notification-counter-container">

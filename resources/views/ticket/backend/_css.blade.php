@@ -1,3 +1,3 @@
 @section("css")
-    <link href="{{ asset("css/ticket/backend/style.css") }}" rel="stylesheet"/>
+    <link href="{{ asset("css/ticket/ticket.css") }}" rel="stylesheet"/>
 @endsection

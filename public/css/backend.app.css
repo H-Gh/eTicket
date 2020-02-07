@@ -16483,6 +16483,10 @@ ul {
   padding: 16px 10px;
 }
 
+.page table .options i {
+  font-size: 13px;
+}
+
 .pagination {
   margin: 10px auto;
   -webkit-box-pack: end;

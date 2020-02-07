@@ -17,9 +17,18 @@
                     </a>
                 @endcan
                 @can("user.remove")
-                    <a class="button danger" href="{{ route("admin.user.destroy", ["user" => $user->id]) }}">
+                    <a class="button danger" href="#"
+                       onclick="confirm('{{ __("common.Are you sure?") }}');
+                               document.getElementById('user-{{ $user->id }}-remove-form').submit();">
                         {{ __("auth.Remove user") }}
                     </a>
+
+                        <form id="user-{{ $user->id }}-remove-form"
+                              action="{{ route("admin.user.destroy", ["user" => $user->id]) }}" method="POST"
+                              style="display: none;">
+                            @csrf
+                            @method("DELETE")
+                        </form>
                 @endcan
             </div>
             <div class="box rounded">

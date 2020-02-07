@@ -12,6 +12,7 @@
         <div class="main-content">
             <div class="box rounded">
                 <form method="POST" action="{{ route("admin.user.update", ["user" => $user]) }}">
+                    @method("PUT")
                     @csrf
                     <div class="content">
                         <div class="container-fluid" style="display: flex">

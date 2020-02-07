@@ -12,9 +12,18 @@
                     </a>
                 @endcan
                 @can("ticket.remove")
-                    <a class="button danger" href="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}">
+                    <a class="button danger"
+                       onclick="confirm('{{ __("common.Are you sure?") }}');
+                               document.getElementById('ticket-{{ $ticket->id }}-remove-form').submit();"
+                       href="#">
                         {{ __("ticket.Remove ticket") }}
                     </a>
+                    <form id="ticket-{{ $ticket->id }}-remove-form"
+                          action="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}" method="POST"
+                          style="display: none;">
+                        @csrf
+                        @method("DELETE")
+                    </form>
                 @endcan
             </div>
             <div class="box rounded">

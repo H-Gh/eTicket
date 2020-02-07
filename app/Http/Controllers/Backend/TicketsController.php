@@ -141,11 +141,11 @@ class TicketsController extends Controller
     {
         if ($ticket->delete()) {
             return redirect()
-                ->back()
+                ->route("admin.ticket.index")
                 ->with("success", __("ticket.Ticket removed successfully."));
         } else {
             return redirect()
-                ->back()
+                ->back("admin.ticket.index")
                 ->with(
                     "success",
                     __("common.There are some problems on deleting data.")

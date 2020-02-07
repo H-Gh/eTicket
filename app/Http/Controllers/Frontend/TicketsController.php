@@ -87,7 +87,7 @@ class TicketsController extends Controller
         $ticket = TicketManager::create($request);
         event(new NewTicketPublished($ticket));
         return redirect()
-            ->route("ticket.list")
+            ->route("ticket.index")
             ->with(
                 "success",
                 __(
