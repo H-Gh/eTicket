@@ -45,7 +45,7 @@
                     @endcan
                     @can("ticket.remove")
                         <a href="#"
-                           onclick="event.preventDefault();
+                           onclick="confirm('{{ __("common.Are you sure?") }}');
                                    document.getElementById('ticket-{{ $ticket->id }}-remove-form').submit();"
                         >
                             <i class="fas fa-trash-alt"></i>
@@ -54,6 +54,7 @@
                               action="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}" method="POST"
                               style="display: none;">
                             @csrf
+                            @method("DELETE")
                         </form>
                     @endcan
                 </td>

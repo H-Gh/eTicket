@@ -1,10 +1,12 @@
+@import "../core/common/common.variables";
+
 @media (min-width: 991px) {
   .page.rtl .main-column .main-content .ticket-info {
-    border-right: 1px solid #e7e7e7;
+    border-right: 1px solid $light-gray;
   }
 
   .page.ltr .main-column .main-content .ticket-info {
-    border-left: 1px solid #e7e7e7;
+    border-left: 1px solid $light-gray;
   }
 }
 
@@ -21,10 +23,5 @@
 }
 
 .page .main-column .main-content .ticket-info .answer {
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid $light-gray;
 }
-
-.page table .options i {
-  font-size: 13px;
-}
-

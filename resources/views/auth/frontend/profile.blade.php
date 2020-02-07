@@ -13,6 +13,7 @@
             <div class="box rounded">
                 <form method="POST" action="{{ route("profile.update", ["user" => request("user")]) }}">
                     @csrf
+                    @method("PUT")
                     <div class="title">{{ __("auth.Profile") }}</div>
                     <div class="content">
                         <div class="container-fluid" style="display: flex">

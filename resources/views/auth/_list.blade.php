@@ -27,7 +27,7 @@
                     @endcan
                     @can("user.remove")
                         <a href="#"
-                           onclick="event.preventDefault();
+                           onclick="confirm('{{ __("common.Are you sure?") }}');
                                    document.getElementById('user-{{ $user->id }}-remove-form').submit();"
                         >
                             <i class="fas fa-trash-alt"></i>
@@ -36,6 +36,7 @@
                               action="{{ route("admin.user.destroy", ["user" => $user->id]) }}" method="POST"
                               style="display: none;">
                             @csrf
+                            @method("DELETE")
                         </form>
                     @endcan
                 </td>

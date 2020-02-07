@@ -22,4 +22,5 @@ return [
     "There is no data yet." => "هنوز داده ای موجود نیست",
     "Updated at" => "تاریخ به روز رسانی",
     "Check it" => "بررسی کنید",
+    "Are you sure?" => "آیا مطمئن هستید؟",
 ];

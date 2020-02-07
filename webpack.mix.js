@@ -16,5 +16,4 @@ mix.react('resources/js/frontend.app.js', 'public/js')
     .sass('resources/sass/core/frontend/frontend.app.scss', 'public/css')
     .sass('resources/sass/core/backend/backend.app.scss', 'public/css')
     .sass('resources/sass/profile/profile.scss', 'public/css/profile')
-    .sass('resources/sass/ticket/backend/style.scss', 'public/css/ticket/backend')
-    .sass('resources/sass/ticket/common/style.scss', 'public/css/ticket/common');
+    .sass('resources/sass/ticket/ticket.scss', 'public/css/ticket');

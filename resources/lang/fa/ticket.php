@@ -52,7 +52,7 @@ TAG,
     "New ticket published." => "درخواست جدید منتشر شد.",
     "new_ticket_published" =>
         <<<TAG
-درخواست جدیدی اخیراً توسط ":username(:userId)" ایجاد شده است.
+درخواست جدیtop-bar.blade.phpدی اخیراً توسط ":username(:userId)" ایجاد شده است.
  لطفاً به درخواست پاسخ دهید یا آن را به فردی دیگری واگذار کنید
 TAG
     ,
@@ -60,5 +60,6 @@ TAG
     "ticket_answered" =>
         "درخواست شما به شماره :id توسط :answeredBy پاسخ داده شد.",
     "You ticket's status was updated." => "وضعیت درخواست شما به روز شد.",
-    "ticket_updated" => "وقعیت درخواست شما به شماره :id به روز شد. لطفاً بررسی کنید."
+    "ticket_updated" => "وقعیت درخواست شما به شماره :id به روز شد. لطفاً بررسی کنید.",
+    "Ticket removed successfully." => "درخواست با موفقیت حذف شد",
 ];
