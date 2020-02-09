@@ -7,20 +7,20 @@
 @endsection
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("auth.User #:number", ["number" => $user->id])])
+        @include("backend.top-bar", ["pageTitle" => __("auth.user_with_number_text", ["number" => $user->id])])
         @include("notifications")
         <div class="main-content">
             <div class="action-buttons-container">
                 @can("user.edit")
                     <a class="button primary" href="{{ route("admin.user.edit", ["user" => $user->id]) }}">
-                        {{ __("auth.Edit user") }}
+                        {{ __("auth.edit_user_permission_text") }}
                     </a>
                 @endcan
                 @can("user.remove")
                     <a class="button danger" href="#"
-                       onclick="confirm('{{ __("common.Are you sure?") }}');
+                       onclick="confirm('{{ __("common.are_you_sure_text") }}');
                                document.getElementById('user-{{ $user->id }}-remove-form').submit();">
-                        {{ __("auth.Remove user") }}
+                        {{ __("auth.remove_user_text") }}
                     </a>
 
                         <form id="user-{{ $user->id }}-remove-form"
@@ -36,15 +36,15 @@
                     <div class="table-responsive">
                         <table class="table-striped data-table">
                             <tr>
-                                <td>{{ __("auth.Email address") }}</td>
+                                <td>{{ __("auth.email_address_text") }}</td>
                                 <td>{{ $user->email }}</td>
                             </tr>
                             <tr>
-                                <td>{{ __("auth.Name") }}</td>
+                                <td>{{ __("common.name_text") }}</td>
                                 <td>{{ $user->name }}</td>
                             </tr>
                             <tr>
-                                <td>{{ __("auth.Roles") }}</td>
+                                <td>{{ __("auth.roles_text") }}</td>
                                 <td>
                                     {{
                                         implode(" - ", $user->roles->map(function($role, $key) {
@@ -54,7 +54,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{ __("auth.Permissions") }}</td>
+                                <td>{{ __("auth.permissions_text") }}</td>
                                 <td>
                                     {{
                                         implode(" - ", $user->permissions->map(function($permission, $key) {
@@ -64,11 +64,11 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{ __("common.Created at") }}</td>
+                                <td>{{ __("common.created_at_text") }}</td>
                                 <td>{{ $user->created_at }}</td>
                             </tr>
                             <tr>
-                                <td>{{ __("common.Updated at") }}</td>
+                                <td>{{ __("common.updated_at_text") }}</td>
                                 <td>{{ $user->updated_at }}</td>
                             </tr>
                         </table>

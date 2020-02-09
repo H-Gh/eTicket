@@ -58,9 +58,9 @@ class UserStoreRequest extends FormRequest
     public function attributes()
     {
         return [
-            "email" => __("auth.Email address"),
-            "name" => __("common.Name"),
-            "password" => __("auth.Password")
+            "email" => __("auth.email_address_text"),
+            "name" => __("common.name_text"),
+            "password" => __("auth.password_text")
         ];
     }
 }

@@ -6,9 +6,9 @@
             <div class="logo-image"></div>
         </div>
         <div class="form-box box">
-            <div class="title">{{ __('auth.Confirm Password') }}</div>
+            <div class="title">{{ __('auth.password__confirm_text') }}</div>
             <div class="description">
-                {{ __('auth.Please confirm your password before continuing.') }}
+                {{ __('auth.confirm_password_before_continue_text') }}
             </div>
             <div class="form">
                 <form method="POST" action="{{ route('password.confirm') }}">
@@ -16,7 +16,7 @@
 
                     <input id="password" type="password" class=" @error('password') is-invalid @enderror"
                            name="password" required autocomplete="current-password"
-                           placeholder="{{ __('auth.Password') }}">
+                           placeholder="{{ __('auth.password_text') }}">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -25,13 +25,13 @@
                     @enderror
 
                     <button type="submit" class="button primary">
-                        {{ __('auth.Confirm Password') }}
+                        {{ __('auth.password__confirm_text') }}
                     </button>
 
                     @if (Route::has('password.request'))
                         <div class="mt-4">
                             <a href="{{ route('password.request') }}">
-                                {{ __('auth.Forgot Your Password?') }}
+                                {{ __('auth.forget_password_text') }}
                             </a>
                         </div>
                     @endif

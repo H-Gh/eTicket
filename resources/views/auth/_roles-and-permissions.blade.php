@@ -1,7 +1,7 @@
 @can("user.permission.assign")
     <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 roles-permissions-container">
         <div class="section">
-            {{ __("auth.Roles and permissions") }}
+            {{ __("auth.roles_and_permissions") }}
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -12,31 +12,31 @@
 "user" => (isset($user) ? $user : null),
 "role" => [
 "index" => "user.admin",
-"name" => __("auth.Users admin"),
-"description" => __("auth.This role will handle any action of users.")
+"name" => __("auth.users_admin_role_text"),
+"description" => __("auth.admin_user_role_description")
 ],
 "permissions" => [
 [
 "index" => "user.add",
-"name" => __("auth.Add user"),
-"description" => __("auth.User can add a new user to system."),
+"name" => __("auth.add_user_permission_text"),
+"description" => __("auth.add_user_permission_description"),
 ],
 [
 "index" => "user.edit",
-"name" => __("auth.Edit user"),
-"description" => __("auth.User can edit an existing user of system.")
+"name" => __("auth.edit_user_permission_text"),
+"description" => __("auth.edit_user_permission_description")
 ],
 [
 "index" => "user.remove",
-"name" => __("auth.Delete user"),
-"description" => __("auth.User can delete an existing user of system."),
-"danger" => __("auth.Deleting a user will delete all its tickets.")
+"name" => __("auth.delete_user_permission_text"),
+"description" => __("auth.delete_user_permission_description"),
+"danger" => __("auth.delete_user_permission_danger")
 ],
 [
 "index" => "user.permission.assign",
-"name" => __("auth.Assign permissions"),
-"description" => __("auth.User can assign roles or permissions to an existing user of system."),
-"danger" => __("auth.User will be able to make others as admin of system.")
+"name" => __("auth.auth.assign_permissions_permission_text"),
+"description" => __("auth.user_assign_permission_description"),
+"danger" => __("auth.assign_permissions_danger_text")
 ],
 ]
 ]
@@ -49,15 +49,15 @@
 "user" => (isset($user) ? $user : null),
 "role" => [
 "index" => "ticket.admin",
-"name" => __("ticket.Tickets admin"),
-"description" => __("ticket.This role will handle any action of tickets")
+"name" => __("ticket.tickets_admin_role_text"),
+"description" => __("ticket.tickets_admin_role_description")
 ],
 "permissions" => [
-["index" => "ticket.add", "name" => __("ticket.Add ticket"), "description" => __("ticket.User can add a new ticket to system.")],
-["index" => "ticket.edit", "name" => __("ticket.Edit ticket"), "description" => __("ticket.User can edit an existing ticket of system.")],
-["index" => "ticket.edit.content", "name" => __("ticket.Edit ticket's content"), "description" => __("ticket.User can edit the title and content an existing ticket of system."), "danger" => __("ticket.User can change others' tickets title or text.")],
-["index" => "ticket.remove", "name" => __("ticket.Delete ticket"), "description" => __("ticket.User can delete an existing ticket of system.")],
-["index" => "ticket.answer", "name" => __("ticket.Answer ticket"), "description" => __("ticket.User can answer an existing ticket of system.")],
+["index" => "ticket.add", "name" => __("ticket.add_ticket_permission_text"), "description" => __("ticket.add_ticket_permission_description")],
+["index" => "ticket.edit", "name" => __("ticket.edit_ticket_permission_text"), "description" => __("ticket.edit_ticket_permission_description")],
+["index" => "ticket.edit.content", "name" => __("ticket.edit_content_ticket_permission_text"), "description" => __("ticket.edit_content_ticket_permission_description"), "danger" => __("ticket.edit_content_ticket_permission_danger")],
+["index" => "ticket.remove", "name" => __("ticket.delete_ticket_permission_text"), "description" => __("ticket.delete_ticket_permission_description")],
+["index" => "ticket.answer", "name" => __("ticket.answer_ticket_text"), "description" => __("ticket.answer_ticket_permission_description")],
 ]
 ]
 )

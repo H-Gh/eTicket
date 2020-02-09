@@ -3,16 +3,16 @@
         <div class="col-s-12 col-md-12 col-lg-9 col-xl-9 ticket-title-and-text">
             <table class="table-striped">
                 <tr>
-                    <td class="font-weight-bold" style="width: 50px">{{ __("common.Title") }}</td>
+                    <td class="font-weight-bold" style="width: 50px">{{ __("common.title_text") }}</td>
                     <td>{{ $ticket->title }}</td>
                 </tr>
                 <tr>
-                    <td class="font-weight-bold">{{ __("common.Text") }}</td>
+                    <td class="font-weight-bold">{{ __("common.text_text") }}</td>
                     <td>{{ $ticket->text }}</td>
                 </tr>
                 @if (!empty($ticket->answered_at))
                     <tr>
-                        <td class="font-weight-bold">{{ __("ticket.Answer") }}</td>
+                        <td class="font-weight-bold">{{ __("ticket.answer_text") }}</td>
                         <td>{{ $ticket->answer }}</td>
                     </tr>
                 @endif
@@ -21,11 +21,11 @@
         <div class="col-s-12 col-md-12 col-lg-3 col-xl-3 ticket-info">
             <table class="table-striped">
                 <tr>
-                    <td>{{ __("common.Created at") }}</td>
+                    <td>{{ __("common.created_at_text") }}</td>
                     <td>{{ $ticket->created_at }}</td>
                 </tr>
                 <tr>
-                    <td>{{ __("common.Status") }}</td>
+                    <td>{{ __("common.status_text") }}</td>
                     <td class="
                                         @if ($ticket->status === App\Ticket::PENDING)
                             text primary
@@ -38,11 +38,11 @@
                 </tr>
                 @if(!empty($ticket->answered_at))
                     <tr>
-                        <td>{{ __("ticket.Answered at") }}</td>
+                        <td>{{ __("ticket.answered_at_text") }}</td>
                         <td>{{ $ticket->answered_at }}</td>
                     </tr>
                     <tr>
-                        <td>{{ __("ticket.Answered by") }}</td>
+                        <td>{{ __("ticket.answered_by_text") }}</td>
                         <td>{{ $ticket->answeredBy->name }}</td>
                     </tr>
                 @endif

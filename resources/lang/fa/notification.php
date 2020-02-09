@@ -1,5 +1,5 @@
 <?php
 return [
-    "Display notification" => "نمایش اطلاعیه",
-    "Notifications" => "اطلاعیه ها"
+    "display_notification_text" => "نمایش اطلاعیه",
+    "notifications_text" => "اطلاعیه ها"
 ];

@@ -14,7 +14,7 @@
                 <form method="POST" action="{{ route("profile.update", ["user" => request("user")]) }}">
                     @csrf
                     @method("PUT")
-                    <div class="title">{{ __("auth.Profile") }}</div>
+                    <div class="title">{{ __("auth.profile_text") }}</div>
                     <div class="content">
                         <div class="container-fluid" style="display: flex">
                             <div class="row" style="width: 100%; margin: 0">
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-2">
-                        <button type="submit" class="button primary">{{ __("common.Save") }}</button>
+                        <button type="submit" class="button primary">{{ __("common.save_text") }}</button>
                     </div>
                 </form>
             </div>

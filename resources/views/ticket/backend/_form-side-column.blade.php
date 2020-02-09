@@ -1,6 +1,6 @@
 <div class="col-s-12 col-md-12 col-lg-3 col-xl-3 ticket-info">
     <div class="form-group">
-        <label for="ticket-created-by">{{ __("ticket.Created by") }}</label>
+        <label for="ticket-created-by">{{ __("ticket.created_by_text") }}</label>
         <select id="ticket-created-by" type="text" name="created_by"
                 @cannot("ticket.edit.content")
                 disabled
@@ -16,7 +16,7 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="ticket-created-at">{{ __("common.Created at") }}</label>
+        <label for="ticket-created-at">{{ __("common.created_at_text") }}</label>
         <input id="ticket-created-at" type="text" name="created_at"
                value="{{ $ticket->created_at }}"
                @cannot("ticket.edit.content")
@@ -25,7 +25,7 @@
         />
     </div>
     <div class="form-group">
-        <label for="ticket-status">{{ __("common.Status") }}</label>
+        <label for="ticket-status">{{ __("common.status_text") }}</label>
         <select id="ticket-status" name="status">
             <option
                     value="{{ \App\Ticket::PENDING }}"

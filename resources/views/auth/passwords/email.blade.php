@@ -6,9 +6,9 @@
             <div class="logo-image"></div>
         </div>
         <div class="form-box box">
-            <div class="title">{{ __('auth.Reset Password') }}</div>
+            <div class="title">{{ __('auth.reset_password_text') }}</div>
             <div class="description">
-                {{ __("auth.To reset password, please enter your email.") }}
+                {{ __("auth.reset_password_advice") }}
             </div>
             <div class="form">
                 @if (session('status'))
@@ -23,7 +23,7 @@
                     <input id="email" type="email" class="@error('email') is-invalid @enderror"
                            name="email"
                            value="{{ old('email') }}" required autocomplete="email" autofocus
-                           placeholder="{{ __('auth.E-Mail Address') }}">
+                           placeholder="{{ __('auth.email_address_text') }}">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -31,19 +31,19 @@
                                     </span>
                     @enderror
                     <button type="submit" class="button primary">
-                        {{ __('auth.Send Password Reset Link') }}
+                        {{ __('auth.send_password_reset_link_button_text') }}
                     </button>
                     @if (Route::has('login'))
                         <div class="mt-4">
                             <a href="{{ route('login') }}">
-                                {{ __("auth.Have account? Login") }}
+                                {{ __("auth.login_advice") }}
                             </a>
                         </div>
                     @endif
                     @if (Route::has('register'))
                         <div class="mt-2">
                             <a href="{{ route('register') }}">
-                                {{ __("auth.Don't have account? Register") }}
+                                {{ __("auth.register_advice") }}
                             </a>
                         </div>
                     @endif

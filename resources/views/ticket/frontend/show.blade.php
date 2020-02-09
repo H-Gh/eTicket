@@ -6,7 +6,7 @@
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
-                <div class="title">{{ __("ticket.Ticket #:number", ["number" => $ticket->id]) }}</div>
+                <div class="title">{{ __("ticket.ticket_with_number_text", ["number" => $ticket->id]) }}</div>
                 <div class="content">
                     @include("ticket.common._show")
                 </div>

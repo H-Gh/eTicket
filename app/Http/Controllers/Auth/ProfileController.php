@@ -70,6 +70,6 @@ class ProfileController extends Controller
 
         return redirect()
             ->back()
-            ->with("success", __("auth.Settings has been saved successfully."));
+            ->with("success", __("common.settings_saved_text"));
     }
 }

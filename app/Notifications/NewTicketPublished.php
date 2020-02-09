@@ -60,7 +60,7 @@ class NewTicketPublished extends Notification
      */
     public static function formatType(): string
     {
-        return __("ticket.New ticket published.");
+        return __("ticket.new_ticket_published_text");
     }
 
     /**
@@ -75,10 +75,10 @@ class NewTicketPublished extends Notification
         $ticket = Ticket::findOrFail($ticketId);
         return (new MessageFormatter())
             ->setRoute(self::getRoute())
-            ->setHeader(__("ticket.New ticket published."))
+            ->setHeader(__("ticket.new_ticket_published_text"))
             ->setBody(
                 __(
-                    "ticket.new_ticket_published",
+                    "ticket.new_ticket_published_body",
                     [
                         "username" => $ticket->createdBy->name,
                         "userId" => $ticket->created_by

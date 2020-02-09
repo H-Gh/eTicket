@@ -117,7 +117,7 @@ class TicketsController extends Controller
         if ($updateResult) {
             $redirect->with(
                 "success",
-                __("ticket.The ticket updated successfully.")
+                __("ticket.ticket_updated_successfully_text")
             );
         } else {
             $redirect->with(
@@ -142,13 +142,13 @@ class TicketsController extends Controller
         if ($ticket->delete()) {
             return redirect()
                 ->route("admin.ticket.index")
-                ->with("success", __("ticket.Ticket removed successfully."));
+                ->with("success", __("ticket.ticket_successfully_deleted_text"));
         } else {
             return redirect()
                 ->back("admin.ticket.index")
                 ->with(
                     "success",
-                    __("common.There are some problems on deleting data.")
+                    __("common.problem_on_saving_text")
                 );
         }
     }

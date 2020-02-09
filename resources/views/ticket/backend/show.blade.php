@@ -2,21 +2,21 @@
 @include("ticket.backend._css")
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("ticket.Ticket #:number", ["number" => $ticket->id])])
+        @include("backend.top-bar", ["pageTitle" => __("ticket.ticket_with_number_text", ["number" => $ticket->id])])
         @include("notifications")
         <div class="main-content">
             <div class="action-buttons-container">
                 @can("ticket.edit")
                     <a class="button primary" href="{{ route("admin.ticket.edit", ["ticket" => $ticket->id]) }}">
-                        {{ __("ticket.Edit ticket") }}
+                        {{ __("ticket.edit_ticket_permission_text") }}
                     </a>
                 @endcan
                 @can("ticket.remove")
                     <a class="button danger"
-                       onclick="confirm('{{ __("common.Are you sure?") }}');
+                       onclick="confirm('{{ __("common.are_you_sure_text") }}');
                                document.getElementById('ticket-{{ $ticket->id }}-remove-form').submit();"
                        href="#">
-                        {{ __("ticket.Remove ticket") }}
+                        {{ __("ticket.remove_ticket_text") }}
                     </a>
                     <form id="ticket-{{ $ticket->id }}-remove-form"
                           action="{{ route("admin.ticket.destroy", ["ticket" => $ticket->id]) }}" method="POST"

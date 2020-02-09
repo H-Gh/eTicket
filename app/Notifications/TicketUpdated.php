@@ -60,7 +60,7 @@ class TicketUpdated extends Notification
      */
     public static function formatType(): string
     {
-        return __("ticket.You ticket's status was updated.");
+        return __("ticket.ticket_status_updated_text");
     }
 
     /**
@@ -75,10 +75,10 @@ class TicketUpdated extends Notification
         $ticket = Ticket::findOrFail($ticketId);
         return (new MessageFormatter())
             ->setRoute(self::getRoute())
-            ->setHeader(__("ticket.You ticket's status was updated."))
+            ->setHeader(__("ticket.ticket_status_updated_text"))
             ->setBody(
                 __(
-                    "ticket.ticket_updated",
+                    "ticket.ticket_updated_body",
                     [
                         "id" => $ticket->id
                     ]

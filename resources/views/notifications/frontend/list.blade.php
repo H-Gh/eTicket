@@ -5,7 +5,7 @@
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
-                <div class="title">{{ __("notification.Notifications") }}</div>
+                <div class="title">{{ __("notification.notifications_text") }}</div>
                 <div class="content">
                     @include("notifications.common._list")
                 </div>

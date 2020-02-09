@@ -1,6 +1,6 @@
 <div class="col-s-12 col-md-12 col-lg-9 col-xl-9 ticket-title-and-text">
     <div class="form-group">
-        <label for="ticket-title">{{ __("common.Title") }}</label>
+        <label for="ticket-title">{{ __("common.title_text") }}</label>
         <input
                 id="ticket-title"
                 type="text"
@@ -15,7 +15,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <label for="ticket-text">{{ __("common.Text") }}</label>
+        <label for="ticket-text">{{ __("common.text_text") }}</label>
         <textarea
                 name="text"
                 id="ticket-text"
@@ -29,7 +29,7 @@
         @enderror
     </div>
     <div class="form-group">
-        <label for="ticket-answer">{{ __("ticket.Answer") }}</label>
+        <label for="ticket-answer">{{ __("ticket.answer_text") }}</label>
         <textarea name="answer" id="ticket-answer" rows="5"
         >{{ old("answer", isset($ticket) ? $ticket->answer : "") }}</textarea>
         @error("answer")

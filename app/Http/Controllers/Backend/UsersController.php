@@ -88,7 +88,7 @@ class UsersController extends Controller
         UserManager::updatePermissions($user, request("permissions"));
         return redirect()
             ->route("admin.user.index")
-            ->with("success", __("auth.User created successfully."));
+            ->with("success", __("auth.new_user_created_successfully_text"));
     }
 
     /**
@@ -136,7 +136,7 @@ class UsersController extends Controller
         UserManager::updatePermissions($user, request("permissions"));
         return redirect()
             ->back()
-            ->with("success", __("auth.User updated successfully."));
+            ->with("success", __("auth.user_updated_successfully_text"));
     }
 
     /**
@@ -153,12 +153,12 @@ class UsersController extends Controller
         if ($user->delete()) {
             return $redirect->with(
                 "success",
-                __("auth.User successfully deleted.")
+                __("auth.user_deleted_successfully_text")
             );
         } else {
             return $redirect->with(
                 "error",
-                __("common.There are some problems on deleting data.")
+                __("common.problem_on_saving_text")
             );
         }
     }

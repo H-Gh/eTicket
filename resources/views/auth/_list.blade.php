@@ -2,12 +2,12 @@
     <table class="data-table users-list">
         <thead>
         <tr>
-            <th>{{ __("common.ID") }}</th>
-            <th>{{ __("auth.Name") }}</th>
-            <th>{{ __("auth.Email address") }}</th>
-            <th>{{ __("common.Created at") }}</th>
-            <th>{{ __("common.Updated at") }}</th>
-            <th>{{ __("common.Options") }}</th>
+            <th>{{ __("common.id_text") }}</th>
+            <th>{{ __("common.name_text") }}</th>
+            <th>{{ __("auth.email_address_text") }}</th>
+            <th>{{ __("common.created_at_text") }}</th>
+            <th>{{ __("common.updated_at_text") }}</th>
+            <th>{{ __("common.options_text") }}</th>
         </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                     @endcan
                     @can("user.remove")
                         <a href="#"
-                           onclick="confirm('{{ __("common.Are you sure?") }}');
+                           onclick="confirm('{{ __("common.are_you_sure_text") }}');
                                    document.getElementById('user-{{ $user->id }}-remove-form').submit();"
                         >
                             <i class="fas fa-trash-alt"></i>
@@ -43,7 +43,7 @@
             </tr>
         @empty
             <tr>
-                <td>{{ __("common.There is no data yet.") }}</td>
+                <td>{{ __("common.no_data_text") }}</td>
             </tr>
         @endforelse
         </tbody>

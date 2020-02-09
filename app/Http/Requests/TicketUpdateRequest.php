@@ -73,8 +73,8 @@ class TicketUpdateRequest extends FormRequest
     public function attributes()
     {
         return [
-            "title" => __("common.Title"),
-            "text" => __("common.Text")
+            "title" => __("common.title_text"),
+            "text" => __("common.text_text")
         ];
     }
 }
