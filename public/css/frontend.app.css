@@ -16662,7 +16662,11 @@ ul {
   padding: 5px;
 }
 
-.page .main-column .top-bar .navigation .content .welcome {
+.page.rtl .main-column .top-bar .navigation .content .welcome {
   float: left;
+}
+
+.page.ltr .main-column .top-bar .navigation .content .welcome {
+  float: right;
 }
 

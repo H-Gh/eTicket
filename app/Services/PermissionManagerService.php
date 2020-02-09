@@ -95,19 +95,19 @@ class PermissionManagerService
             case "ticket.edit.content":
                 return (new PermissionName())
                 ->setDatabaseName("ticket.edit.content")
-                ->setName("Edit ticket's content")
+                ->setName("edit_content_ticket_permission_text")
                 ->setCategory("ticket");
             break;
             case "ticket.remove":
                 return (new PermissionName())
                 ->setDatabaseName("ticket.remove")
-                ->setName("Remove ticket")
+                ->setName("delete_ticket_permission_text")
                 ->setCategory("ticket");
             break;
             case "ticket.answer":
                 return (new PermissionName())
                 ->setDatabaseName("ticket.answer")
-                ->setName("Answer ticket")
+                ->setName("answer_ticket_text")
                 ->setCategory("ticket");
             break;
             case "ticket.assign":
