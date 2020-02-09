@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("auth.New user")])
+        @include("backend.top-bar", ["pageTitle" => __("auth.new_user_text")])
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-2">
-                        <button type="submit" class="button primary">{{ __("common.Save") }}</button>
+                        <button type="submit" class="button primary">{{ __("common.save_text") }}</button>
                     </div>
                 </form>
             </div>

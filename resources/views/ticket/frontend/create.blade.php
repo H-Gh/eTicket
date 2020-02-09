@@ -5,7 +5,7 @@
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
-                <div class="title">{{ __("ticket.New ticket") }}</div>
+                <div class="title">{{ __("ticket.new_ticket_text") }}</div>
                 <div class="content">
                     @include("ticket.frontend._form")
                 </div>

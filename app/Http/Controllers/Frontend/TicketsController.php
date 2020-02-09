@@ -92,7 +92,7 @@ class TicketsController extends Controller
                 "success",
                 __(
                     <<<TAG
-ticket.Your ticket saved successfully and will be reviewed as soon as possible.
+ticket.ticket_saved_successfully_text
 TAG
                 )
             );

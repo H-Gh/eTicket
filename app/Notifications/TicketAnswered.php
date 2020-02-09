@@ -60,7 +60,7 @@ class TicketAnswered extends Notification
      */
     public static function formatType(): string
     {
-        return __("ticket.Your ticket was answered.");
+        return __("ticket.your_ticket_answered_text");
     }
 
     /**
@@ -75,10 +75,10 @@ class TicketAnswered extends Notification
         $ticket = Ticket::findOrFail($ticketId);
         return (new MessageFormatter())
             ->setRoute(self::getRoute())
-            ->setHeader(__("ticket.Your ticket was answered."))
+            ->setHeader(__("ticket.your_ticket_answered_text"))
             ->setBody(
                 __(
-                    "ticket.ticket_answered",
+                    "ticket.ticket_answered_body",
                     [
                         "id" => $ticket->id,
                         "answeredBy" => $ticket->answeredBy->name

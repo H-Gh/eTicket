@@ -6,9 +6,9 @@
             <div class="logo-image"></div>
         </div>
         <div class="form-box box">
-            <div class="title">{{ __('auth.Reset Password') }}</div>
+            <div class="title">{{ __('auth.reset_password_text') }}</div>
             <div class="description">
-                {{ __("auth.To reset password, please enter your email and new password.") }}
+                {{ __("auth.reset_password_advice_2") }}
             </div>
             <div class="form">
                 <form method="POST" action="{{ route('password.update') }}">
@@ -19,7 +19,7 @@
 
                     <input id="email" type="email" class=" @error('email') is-invalid @enderror"
                            name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"
-                           placeholder="{{ __('auth.E-Mail Address') }}">
+                           placeholder="{{ __('auth.email_address_text') }}">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
                                     </span>
                     @enderror
                     <input id="password" type="password" class=" @error('password') is-invalid @enderror"
-                           name="password" required autocomplete="new-password" placeholder="{{ __('auth.Password') }}" autofocus>
+                           name="password" required autocomplete="new-password" placeholder="{{ __('auth.password_text') }}" autofocus>
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -37,10 +37,10 @@
 
                     <input id="password-confirm" type="password" class=""
                            name="password_confirmation"
-                           required autocomplete="new-password" placeholder="{{ __('auth.Confirm Password') }}">
+                           required autocomplete="new-password" placeholder="{{ __('auth.password__confirm_text') }}">
 
                     <button type="submit" class="btn btn-primary">
-                        {{ __('auth.Reset Password') }}
+                        {{ __('auth.reset_password_text') }}
                     </button>
                 </form>
             </div>

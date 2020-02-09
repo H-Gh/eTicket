@@ -6,9 +6,9 @@
             <div class="logo-image"></div>
         </div>
         <div class="form-box box">
-            <div class="title">{{ __('auth.Register') }}</div>
+            <div class="title">{{ __('auth.register_text') }}</div>
             <div class="description">
-                {{ __("auth.To register, please enter your name, email and password") }}
+                {{ __("auth.register_app_advice") }}
             </div>
             <div class="form">
                 <form method="POST" action="{{ route('register') }}">
@@ -16,7 +16,7 @@
 
                     <input id="name" type="text" class="@error('name') is-invalid @enderror" name="name"
                            value="{{ old('name') }}" required autocomplete="name" autofocus
-                           placeholder="{{ __('auth.Name and family') }}">
+                           placeholder="{{ __('common.Name and family') }}">
 
                     @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -26,7 +26,7 @@
 
                     <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email"
                            value="{{ old('email') }}" required autocomplete="email"
-                           placeholder="{{ __('auth.E-Mail Address') }}">
+                           placeholder="{{ __('auth.email_address_text') }}">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -35,7 +35,7 @@
                     @enderror
 
                     <input id="password" type="password" class="@error('password') is-invalid @enderror"
-                           name="password" required autocomplete="new-password" placeholder="{{ __('auth.Password') }}">
+                           name="password" required autocomplete="new-password" placeholder="{{ __('auth.password_text') }}">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -44,15 +44,15 @@
                     @enderror
 
                     <input id="password-confirm" type="password" class="" name="password_confirmation" required
-                           autocomplete="new-password" placeholder="{{ __('auth.Confirm Password') }}">
+                           autocomplete="new-password" placeholder="{{ __('auth.password__confirm_text') }}">
 
                     <button type="submit" class="button primary">
-                        {{ __('auth.Register') }}
+                        {{ __('auth.register_text') }}
                     </button>
                     @if (Route::has('login'))
                         <div class="mt-4">
                             <a href="{{ route('login') }}">
-                                {{ __("auth.Have account? Login") }}
+                                {{ __("auth.login_advice") }}
                             </a>
                         </div>
                     @endif

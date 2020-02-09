@@ -14,6 +14,8 @@
 
 namespace App\Services;
 
+use Auth;
+
 /**
  * Class PermissionManagerService
  *
@@ -36,86 +38,86 @@ class PermissionManagerService
     public function getName(string $roleOrPermission): ?PermissionName
     {
         switch ($roleOrPermission) {
-        case "super-admin":
-            return (new PermissionName())
+            case "super-admin":
+                return (new PermissionName())
                 ->setDatabaseName("super-admin")
                 ->setName("Super admin")
                 ->setCategory("auth");
             break;
-        case "user.admin":
-            return (new PermissionName())
+            case "user.admin":
+                return (new PermissionName())
                 ->setDatabaseName("user.admin")
                 ->setName("Users admin")
                 ->setCategory("auth");
             break;
-        case "user.add":
-            return (new PermissionName())
+            case "user.add":
+                return (new PermissionName())
                 ->setDatabaseName("user.add")
                 ->setName("Add user")
                 ->setCategory("auth");
             break;
-        case "user.edit":
-            return (new PermissionName())
+            case "user.edit":
+                return (new PermissionName())
                 ->setDatabaseName("user.edit")
                 ->setName("Edit user")
                 ->setCategory("auth");
             break;
-        case "user.remove":
-            return (new PermissionName())
+            case "user.remove":
+                return (new PermissionName())
                 ->setDatabaseName("user.remove")
                 ->setName("Remove user")
                 ->setCategory("auth");
             break;
-        case "user.permission.assign":
-            return (new PermissionName())
+            case "user.permission.assign":
+                return (new PermissionName())
                 ->setDatabaseName("user.permission.assign")
-                ->setName("Assign permissions")
+                ->setName("auth.assign_permissions_permission_text")
                 ->setCategory("auth");
             break;
-        case "ticket.admin":
-            return (new PermissionName())
+            case "ticket.admin":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.admin")
                 ->setName("Ticket admin")
                 ->setCategory("ticket");
             break;
-        case "ticket.add":
-            return (new PermissionName())
+            case "ticket.add":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.add")
-                ->setName("Add ticket")
+                ->setName("add_ticket_permission_text")
                 ->setCategory("ticket");
             break;
-        case "ticket.edit":
-            return (new PermissionName())
+            case "ticket.edit":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.edit")
-                ->setName("Edit ticket")
+                ->setName("edit_ticket_permission_text")
                 ->setCategory("ticket");
             break;
-        case "ticket.edit.content":
-            return (new PermissionName())
+            case "ticket.edit.content":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.edit.content")
                 ->setName("Edit ticket's content")
                 ->setCategory("ticket");
             break;
-        case "ticket.remove":
-            return (new PermissionName())
+            case "ticket.remove":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.remove")
                 ->setName("Remove ticket")
                 ->setCategory("ticket");
             break;
-        case "ticket.answer":
-            return (new PermissionName())
+            case "ticket.answer":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.answer")
                 ->setName("Answer ticket")
                 ->setCategory("ticket");
             break;
-        case "ticket.assign":
-            return (new PermissionName())
+            case "ticket.assign":
+                return (new PermissionName())
                 ->setDatabaseName("ticket.assign")
-                ->setName("Assign answerer")
+                ->setName("assign_answerer_permission_text")
                 ->setCategory("ticket");
             break;
-        default:
-            return null;
+            default:
+                return null;
         }
     }
 
@@ -143,7 +145,7 @@ class PermissionManagerService
      */
     public function hasAnyAdminPermissions(): bool
     {
-        return \Auth::user()->hasAnyPermission(
+        return Auth::user()->hasAnyPermission(
             [
                 "user.add",
                 "user.edit",

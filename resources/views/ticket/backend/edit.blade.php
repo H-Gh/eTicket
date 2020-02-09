@@ -2,7 +2,7 @@
 @include("ticket.backend._css")
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("ticket.Edit ticket #:number", ["number" => $ticket->id])])
+        @include("backend.top-bar", ["pageTitle" => __("ticket.edit_ticket_with_number_text", ["number" => $ticket->id])])
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="submit-button-container">
-                            <button type="submit" class="button primary">{{ __("common.Send") }}</button>
+                            <button type="submit" class="button primary">{{ __("common.send_text") }}</button>
                         </div>
                     </form>
                 </div>

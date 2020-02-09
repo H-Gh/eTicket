@@ -23,7 +23,7 @@
             </tr>
         @empty
             <tr>
-                <td>{{ __("common.There is no data yet.") }}</td>
+                <td>{{ __("common.no_data_text") }}</td>
             </tr>
         @endforelse
         </tbody>

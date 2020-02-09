@@ -60,7 +60,7 @@ class MessageFormatter
 
     public function __construct()
     {
-        $this->buttonText = __("common.Check it");
+        $this->buttonText = __("common.check_something_text");
     }
 
     /**

@@ -60,8 +60,8 @@ class UserUpdateRequest extends FormRequest
     public function attributes()
     {
         return [
-            "name" => __("common.Name"),
-            "password" => __("auth.Password")
+            "name" => __("common.name_text"),
+            "password" => __("auth.password_text")
         ];
     }
 }

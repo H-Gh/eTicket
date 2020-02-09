@@ -2,7 +2,7 @@
 @include("ticket.backend._css")
 @section('content')
     <div class="main-column">
-        @include("backend.top-bar", ["pageTitle" => __("ticket.Tickets list")])
+        @include("backend.top-bar", ["pageTitle" => __("ticket.tickets_list_text")])
         @include("notifications")
         <div class="main-content">
             <div class="box rounded">
